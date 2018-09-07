@@ -12,6 +12,8 @@ Second Commit: Setting up the testing environment
         6.  MODIFIED: test called "ExampleTest.php" at feature directory to include DatabaseMigrations
         7.  MODIFIED: test called "ExampleTest.php" at unit directory to include DatabaseMigrations
 
+Third Commit: Authentication Quickstart
+        1.  CREATED: Authentication files by running "make:auth"
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
