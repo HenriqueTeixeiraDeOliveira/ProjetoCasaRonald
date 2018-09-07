@@ -1,0 +1,17 @@
+Notes
+
+First Commit: Brand New Laravel Application
+        1.  INSTALL: Laravel Application
+
+Second Commit: Setting up the testing environment
+        1.  CREATED: alias file called ".bashrc" to run commands faster
+        2.  MODIFIED: phpunit.xml to run tests in memory
+        3.  MODIFIED: AppServiceProvider.php to be able to run the migration properly
+        4.  CREATED: helper function file called "functions.php" to make easier to understand the code
+        5.  MODIFIED: composer.json to include the helper functions (run composer dump-autoload)
+        6.  MODIFIED: test called "ExampleTest.php" at feature directory to include DatabaseMigrations
+        7.  MODIFIED: test called "ExampleTest.php" at unit directory to include DatabaseMigrations
+
+
+* How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
+* How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
