@@ -1,7 +1,7 @@
 Notes
 
 First Commit: Brand New Laravel Application
-        1.  INSTALL: Laravel Application
+        1.  INSTALL:    Laravel Application
 
 Second Commit: Setting up the testing environment
         1.  CREATED: alias file called ".bashrc" to run commands faster
@@ -14,6 +14,23 @@ Second Commit: Setting up the testing environment
 
 Third Commit: Authentication Quickstart
         1.  CREATED: Authentication files by running "make:auth"
+
+Fourth Commit: Video and Subject Models
+        1.  MODIFIED: Factory called "UserFactory" was renamed to "ModelFactories"
+        2.  CREATED: Model called "Video"
+        3.  CREATED: Migration called "Video"
+        4.  CREATED: Model called "Subject"
+        5.  CREATED: Migration called "Subject"
+        6.  CREATED: Model called "Advertisement"
+        7.  CREATED: Migration called "Advertisement"
+        8.  MODIFIED: AppServiceProvider to create a morphMap
+        9.  MODIFIED: Model called "User" to add relationship between the user and an video
+        10. MODIFIED: Factory called "ModelFactories" to create factories for Video, Subject and Advertisement
+        11. MODIFIED: Unit Test called "ExampleTest" was renamed to "ModelFactories"
+        12. MODIFIED: Unit Test called "ModelFactories" to add:
+            a. a_video_can_belong_to_a_subject 
+            b. a_video_can_belong_to_a_advertisement
+            c. a_video_has_an_owner
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
