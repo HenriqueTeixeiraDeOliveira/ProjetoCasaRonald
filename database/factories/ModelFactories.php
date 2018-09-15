@@ -54,7 +54,7 @@ $factory->state(App\Video::class, 'advertisement', [
 $factory->define(App\Subject::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
-        'field' => $faker->randomElement(['Math','Science','History'])
+        'field' => $faker->randomElement(['Matemática','Química','Geografia'])
     ];
 });
 

@@ -28,9 +28,18 @@ Fourth Commit: Video and Subject Models
         10. MODIFIED: Factory called "ModelFactories" to create factories for Video, Subject and Advertisement
         11. MODIFIED: Unit Test called "ExampleTest" was renamed to "ModelFactories"
         12. MODIFIED: Unit Test called "ModelFactories" to add:
-            a. a_video_can_belong_to_a_subject 
+            a. a_video_can_belong_to_a_subject
             b. a_video_can_belong_to_a_advertisement
             c. a_video_has_an_owner
+
+Fifth Commit: Video and Subject Models
+        1.  MODIFIED: Route "web" to add comments related to standardization
+        2.  MODIFIED: Factory called "ModelFactories" to translate the subjects names to portuguese
+        3.  MODIFIED: Seed called "DatabaseSeeder" to add the new tables
+        5.  CREATED: Seed called "UsersTableSeeder"
+        6.  CREATED: Seed called "VideosTableSeeder"
+        7.  CREATED: Seed called "SubjectsTableSeeder"
+        8.  CREATED: Seed called "AdvertisementsTableSeeder"
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git
