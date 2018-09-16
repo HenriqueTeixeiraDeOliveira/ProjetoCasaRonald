@@ -18,11 +18,11 @@ Third Commit: Authentication Quickstart
 Fourth Commit: Video and Subject Models
         1.  MODIFIED: Factory called "UserFactory" was renamed to "ModelFactories"
         2.  CREATED: Model called "Video"
-        3.  CREATED: Migration called "Video"
+        3.  CREATED: Migration called "create_videos_table"
         4.  CREATED: Model called "Subject"
-        5.  CREATED: Migration called "Subject"
+        5.  CREATED: Migration called "create_subjects_table"
         6.  CREATED: Model called "Advertisement"
-        7.  CREATED: Migration called "Advertisement"
+        7.  CREATED: Migration called "create_advertisements_table"
         8.  MODIFIED: AppServiceProvider to create a morphMap
         9.  MODIFIED: Model called "User" to add relationship between the user and an video
         10. MODIFIED: Factory called "ModelFactories" to create factories for Video, Subject and Advertisement
@@ -40,6 +40,27 @@ Fifth Commit: Video and Subject Models
         6.  CREATED: Seed called "VideosTableSeeder"
         7.  CREATED: Seed called "SubjectsTableSeeder"
         8.  CREATED: Seed called "AdvertisementsTableSeeder"
+
+Sixty Commit:
+        1.  CREATED: Model called "Lesson"
+        2.  CREATED: Controller called "LessonController"
+        3.  CREATED: Migration called "create_lessons_table"
+        4.  CREATED: Seed called "LessonsTableSeeder"
+        5.  MODIFIED: Seed called "DatabaseSeeder" to add the Lessons table
+        6.  MODIFIED: Seed called "VideosTableSeeder" to update the watchable type
+        7.  MODIFIED: Factory called "ModelFactories" to add the Lesson Factory the Subject Factory
+        8.  MODIFIED: Model called "Subject" to update the relationship
+        9.  MODIFIED: Model called "Video" to update the relationship
+        10.  MODIFIED: AppServiceProvider to update a morphMap
+        11  MODIFIED: Route called "web" to add the new routes
+        12. MODIFIED: View called "layouts.app"
+        13. CREATED: View called "layouts.navbar"
+        14. CREATED: View called "layouts.footer"
+        15. CREATED: View called "lesson.index"
+        16. CREATED: View called "lesson.show"
+        17. CREATED: View called "lesson.show"
+
+
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git

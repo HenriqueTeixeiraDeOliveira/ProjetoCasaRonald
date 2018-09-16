@@ -18,9 +18,11 @@ class DatabaseSeeder extends Seeder
         DB::table('videos')->truncate();
         DB::table('subjects')->truncate();
         DB::table('advertisements')->truncate();
+        DB::table('lessons')->truncate();
 
         $this->call(SubjectsTableSeeder::class);
         $this->call(AdvertisementsTableSeeder::class);
+        $this->call(LessonsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(VideosTableSeeder::class);
     }

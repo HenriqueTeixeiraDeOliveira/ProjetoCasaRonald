@@ -27,29 +27,15 @@ $factory->define(App\Video::class, function (Faker $faker) {
         'user_id' => function() {
             return factory (App\User::class)->create()->id;
         },
-        'watchable_type' => 'subject',
+        'watchable_type' => 'lesson',
         'watchable_id' => function() {
-            return factory (App\Subject::class)->create()->id;
+            return factory (App\Lesson::class)->create()->id;
         },
         'title' => $faker->word,
         'description' => $faker->sentence,
         'url' => $faker->url,
     ];
 });
-
-$factory->state(App\Video::class, 'subject', [
-    'watchable_type' => 'subject',
-    'watchable_id' => function() {
-        return factory (App\Subject::class)->create()->id;
-    },
-]);
-
-$factory->state(App\Video::class, 'advertisement', [
-    'watchable_type' => 'advertisement',
-    'watchable_id' => function() {
-        return factory (App\Advertisement::class)->create()->id;
-    },
-]);
 
 $factory->define(App\Subject::class, function (Faker $faker) {
     return [
@@ -64,3 +50,35 @@ $factory->define(App\Advertisement::class, function (Faker $faker) {
         'sponsor' => $faker->word
     ];
 });
+
+$factory->define(App\Lesson::class, function (Faker $faker) {
+    return [
+        'subject_id' => function() {
+            return factory (App\Subject::class)->create()->id;
+        },
+        'title' => $faker->word,
+        'level' => $faker->randomElement(['Fácil','Intermediário','Difícil'])
+    ];
+});
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Model States
+|--------------------------------------------------------------------------
+*/
+
+$factory->state(App\Video::class, 'subject', [
+    'watchable_type' => 'lesson',
+    'watchable_id' => function() {
+        return factory (App\Subject::class)->create()->id;
+    },
+]);
+
+$factory->state(App\Video::class, 'advertisement', [
+    'watchable_type' => 'advertisement',
+    'watchable_id' => function() {
+        return factory (App\Advertisement::class)->create()->id;
+    },
+]);

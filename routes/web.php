@@ -20,6 +20,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::get('/lesson', 'LessonController@index');
+Route::get('/lesson/create', 'LessonController@create');
+Route::post('/lesson', 'LessonController@store');
+Route::get('/lesson/{lesson}', 'LessonController@show');
+//Route::get('/lesson/{lesson)/edit', 'LessonController@edit');
+//Route::patch('/lesson/{lesson)', 'LessonController@update');
+//Route::delete('/lesson/{lesson)', 'LessonController@destroy');
 
 
 

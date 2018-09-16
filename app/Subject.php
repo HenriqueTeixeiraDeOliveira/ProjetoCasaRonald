@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subject extends Model
 {
-    public function videos()
+    public function lessons()
     {
-        return $this->morphMany(Video::class, 'watchable');
+        return $this->hasMany(Lesson::class);
     }
 }

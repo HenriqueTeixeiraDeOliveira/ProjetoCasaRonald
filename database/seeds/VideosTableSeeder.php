@@ -13,7 +13,7 @@ class VideosTableSeeder extends Seeder
     {
         factory('App\Video')->create([
             'user_id' => 1,
-            'watchable_type' => 'subject',
+            'watchable_type' => 'lesson',
             'watchable_id' => 1,
             'url' => 'https://www.youtube.com/embed/VKztNiY5p5M'
         ]);
@@ -27,7 +27,7 @@ class VideosTableSeeder extends Seeder
 
         factory('App\Video')->create([
             'user_id' => 2,
-            'watchable_type' => 'subject',
+            'watchable_type' => 'lesson',
             'watchable_id' => 2,
             'url' => 'https://www.youtube.com/embed/VKztNiY5p5M'
         ]);
