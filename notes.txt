@@ -48,7 +48,7 @@ Sixty Commit:
         4.  CREATED: Seed called "LessonsTableSeeder"
         5.  MODIFIED: Seed called "DatabaseSeeder" to add the Lessons table
         6.  MODIFIED: Seed called "VideosTableSeeder" to update the watchable type
-        7.  MODIFIED: Factory called "ModelFactories" to add the Lesson Factory the Subject Factory
+        7.  MODIFIED: Factory called "ModelFactories" to add the Lesson Factory and the Subject Factory
         8.  MODIFIED: Model called "Subject" to update the relationship
         9.  MODIFIED: Model called "Video" to update the relationship
         10.  MODIFIED: AppServiceProvider to update a morphMap
@@ -59,6 +59,15 @@ Sixty Commit:
         15. CREATED: View called "lesson.index"
         16. CREATED: View called "lesson.show"
         17. CREATED: View called "lesson.show"
+
+Seventh Commit:
+        1.  CREATED: Model called "Sticker"
+        2.  CREATED: Controller called "StickerController"
+        3.  CREATED: Migration called "create_stickers_table"
+        4.  CREATED: Seed called "StickersTableSeeder"
+        5.  MODIFIED: Seed called "DatabaseSeeder" to add the Stickers table
+        6.  MODIFIED: Factory called "ModelFactories" to add the Stickers Factory
+        7.  MODIFIED: Model called "User" to add methods to get stickers and set the relationship with Stickers
 
 
 

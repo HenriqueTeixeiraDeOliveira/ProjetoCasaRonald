@@ -61,6 +61,15 @@ $factory->define(App\Lesson::class, function (Faker $faker) {
     ];
 });
 
+$factory->define(App\Sticker::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'registration' => (string)$faker->numberBetween(1000,5000),
+        'photo_path' => $faker->word,
+        'type' => $faker->randomElement(['escola','livro','atividade'])
+    ];
+});
+
 
 
 /*

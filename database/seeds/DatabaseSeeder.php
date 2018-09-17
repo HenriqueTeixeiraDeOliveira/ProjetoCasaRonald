@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         DB::table('users')->truncate();
+        DB::table('stickers')->truncate();
+        DB::table('sticker_user')->truncate();
         DB::table('videos')->truncate();
         DB::table('subjects')->truncate();
         DB::table('advertisements')->truncate();
@@ -23,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SubjectsTableSeeder::class);
         $this->call(AdvertisementsTableSeeder::class);
         $this->call(LessonsTableSeeder::class);
+        $this->call(StickersTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(VideosTableSeeder::class);
     }
