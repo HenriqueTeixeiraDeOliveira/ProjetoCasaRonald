@@ -15,7 +15,7 @@ Second Commit: Setting up the testing environment
 Third Commit: Authentication Quickstart
         1.  CREATED: Authentication files by running "make:auth"
 
-Fourth Commit: Video and Subject Models
+Fourth Commit: Added the main Models, Migrations and Factories
         1.  MODIFIED: Factory called "UserFactory" was renamed to "ModelFactories"
         2.  CREATED: Model called "Video"
         3.  CREATED: Migration called "create_videos_table"
@@ -32,7 +32,7 @@ Fourth Commit: Video and Subject Models
             b. a_video_can_belong_to_a_advertisement
             c. a_video_has_an_owner
 
-Fifth Commit: Video and Subject Models
+Fifth Commit: Database Seeding
         1.  MODIFIED: Route "web" to add comments related to standardization
         2.  MODIFIED: Factory called "ModelFactories" to translate the subjects names to portuguese
         3.  MODIFIED: Seed called "DatabaseSeeder" to add the new tables
@@ -41,7 +41,7 @@ Fifth Commit: Video and Subject Models
         7.  CREATED: Seed called "SubjectsTableSeeder"
         8.  CREATED: Seed called "AdvertisementsTableSeeder"
 
-Sixty Commit:
+Sixty Commit: Lessons were created and some relationships were changed
         1.  CREATED: Model called "Lesson"
         2.  CREATED: Controller called "LessonController"
         3.  CREATED: Migration called "create_lessons_table"
@@ -60,7 +60,7 @@ Sixty Commit:
         16. CREATED: View called "lesson.show"
         17. CREATED: View called "lesson.show"
 
-Seventh Commit:
+Seventh Commit: Stickers and some relationships were created
         1.  CREATED: Model called "Sticker"
         2.  CREATED: Controller called "StickerController"
         3.  CREATED: Migration called "create_stickers_table"
@@ -68,6 +68,14 @@ Seventh Commit:
         5.  MODIFIED: Seed called "DatabaseSeeder" to add the Stickers table
         6.  MODIFIED: Factory called "ModelFactories" to add the Stickers Factory
         7.  MODIFIED: Model called "User" to add methods to get stickers and set the relationship with Stickers
+
+Eighth Commit:
+        1.  CREATED: Unit Test called "ModelFactories" to add:
+                a. an_user_can_be_awarded_for_going_to_the_school
+                b. an_user_can_be_awarded_for_reading_a_book
+                c. an_user_can_be_awarded_for_doing_an_activity
+        2.  MODIFIED: Factory called "ModelFactories" to fix an issue related to the lesson state
+        3.  MODIFIED: Unit Test called "a_video_can_belong_to_a_lesson"
 
 
 

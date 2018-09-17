@@ -11,10 +11,10 @@ class VideoTest extends TestCase
     use DatabaseMigrations;
 
     /** @test */
-    public function a_video_can_belong_to_a_subject()
+    public function a_video_can_belong_to_a_lesson()
     {
-        $video = factory('App\Video')->state('subject')->create();
-        $this->assertInstanceOf('App\Subject', $video->watchable);
+        $video = factory('App\Video')->state('lesson')->create();
+        $this->assertInstanceOf('App\Lesson', $video->watchable);
     }
 
     /** @test */

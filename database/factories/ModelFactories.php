@@ -78,10 +78,10 @@ $factory->define(App\Sticker::class, function (Faker $faker) {
 |--------------------------------------------------------------------------
 */
 
-$factory->state(App\Video::class, 'subject', [
+$factory->state(App\Video::class, 'lesson', [
     'watchable_type' => 'lesson',
     'watchable_id' => function() {
-        return factory (App\Subject::class)->create()->id;
+        return factory (App\Lesson::class)->create()->id;
     },
 ]);
 
