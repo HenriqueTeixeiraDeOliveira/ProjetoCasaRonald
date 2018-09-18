@@ -14,7 +14,9 @@ class StickerController extends Controller
      */
     public function index()
     {
-        //
+        $stickers = Sticker::all();
+
+        return view('sticker.index')->with('stickers', $stickers);
     }
 
     /**
@@ -24,7 +26,7 @@ class StickerController extends Controller
      */
     public function create()
     {
-        //
+        return view('sticker.create');
     }
 
     /**
@@ -35,7 +37,14 @@ class StickerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Sticker::create([
+            'name' => request('name'),
+            'registration' => request('registration'),
+            'photo_path' => request('photopath'),
+            'type'  => request('type')
+        ]);
+
+        return redirect()->route('home');
     }
 
     /**
@@ -46,7 +55,7 @@ class StickerController extends Controller
      */
     public function show(Sticker $sticker)
     {
-        //
+        return view('sticker.show')->with('sticker', $sticker);
     }
 
     /**

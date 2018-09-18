@@ -52,13 +52,13 @@ Sixty Commit: Lessons were created and some relationships were changed
         8.  MODIFIED: Model called "Subject" to update the relationship
         9.  MODIFIED: Model called "Video" to update the relationship
         10.  MODIFIED: AppServiceProvider to update a morphMap
-        11  MODIFIED: Route called "web" to add the new routes
+        11  MODIFIED: Route file called "web" to add the new routes
         12. MODIFIED: View called "layouts.app"
         13. CREATED: View called "layouts.navbar"
         14. CREATED: View called "layouts.footer"
         15. CREATED: View called "lesson.index"
         16. CREATED: View called "lesson.show"
-        17. CREATED: View called "lesson.show"
+        17. CREATED: View called "lesson.create"
 
 Seventh Commit: Stickers and some relationships were created
         1.  CREATED: Model called "Sticker"
@@ -69,13 +69,22 @@ Seventh Commit: Stickers and some relationships were created
         6.  MODIFIED: Factory called "ModelFactories" to add the Stickers Factory
         7.  MODIFIED: Model called "User" to add methods to get stickers and set the relationship with Stickers
 
-Eighth Commit:
+Eighth Commit: Test for Stickers were created and minor issues were fixed
         1.  CREATED: Unit Test called "ModelFactories" to add:
                 a. an_user_can_be_awarded_for_going_to_the_school
                 b. an_user_can_be_awarded_for_reading_a_book
                 c. an_user_can_be_awarded_for_doing_an_activity
         2.  MODIFIED: Factory called "ModelFactories" to fix an issue related to the lesson state
         3.  MODIFIED: Unit Test called "a_video_can_belong_to_a_lesson"
+
+Ninth Commit: Views for sticker were created
+        1.  CREATED: View called "sticker.index"
+        2.  CREATED: View called "sticker.show"
+        3.  CREATED: View called "sticker.create"
+        4.  MODIFIED: Route file called "web" to add the new routes
+        5.  MODIFIED: Controller called "StickerController" to add create and post methods
+        6.  MODIFIED: Model called "Sticker" to update guarded settings
+
 
 
 

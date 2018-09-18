@@ -30,6 +30,14 @@ Route::get('/lesson/{lesson}', 'LessonController@show');
 
 
 
+Route::get('/sticker', 'StickerController@index');
+Route::get('/sticker/create', 'StickerController@create');
+Route::post('/sticker', 'StickerController@store');
+Route::get('/sticker/{sticker}', 'StickerController@show');
+//Route::get('/sticker/{sticker)/edit', 'StickerController@edit');
+//Route::patch('/sticker/{sticker)', 'StickerController@update');
+//Route::delete('/sticker/{sticker)', 'StickerController@destroy');
+
 
 /*
 |   VERB            URI                     ACTION          ROUTE NAME
