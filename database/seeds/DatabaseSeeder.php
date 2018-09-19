@@ -14,18 +14,24 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        DB::table('users')->truncate();
-        DB::table('stickers')->truncate();
-        DB::table('sticker_user')->truncate();
-        DB::table('videos')->truncate();
-        DB::table('subjects')->truncate();
-        DB::table('advertisements')->truncate();
-        DB::table('lessons')->truncate();
+        DB::table('users')->delete();
+        DB::table('roles')->delete();
+        DB::table('stickers')->delete();
+        DB::table('videos')->delete();
+        DB::table('subjects')->delete();
+        DB::table('advertisements')->delete();
+        DB::table('lessons')->delete();
+        DB::table('permissions')->delete();
+        DB::table('role_user')->delete();
+        DB::table('permission_role')->delete();
+        DB::table('sticker_user')->delete();
 
         $this->call(SubjectsTableSeeder::class);
         $this->call(AdvertisementsTableSeeder::class);
         $this->call(LessonsTableSeeder::class);
         $this->call(StickersTableSeeder::class);
+        $this->call(PermissionsTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(VideosTableSeeder::class);
     }
