@@ -99,6 +99,17 @@ Tenth Commit:
         11. MODIFIED: Seed called "UsersTableSeeder" to assign roles for Users
         12. MODIFIED: Provider called "AuthServiceProvider" to add permissions
 
+Eleventh Commit:
+
+        1. MODIFIED: Model called "User" to make the keys explicit
+        2. MODIFIED: Model called "Role" to make the keys explicit
+        3. MODIFIED: Model called "Permission" to make the keys explicit
+        4. MODIFIED: Model called "Sticker" to make the keys explicit
+        5. MODIFIED: Migration called "create_roles_table" to fix drop table order issue
+        6. MODIFIED: Migration called "create_permissions_table" to fix drop table order issue
+        7. MODIFIED: Migration called "create_stickers_table" to fix drop table order issue and add the cascade onDelete
+        8. MODIFIED: Provider called "AuthServiceProvider" to avoid database migration error
+
 
 
 

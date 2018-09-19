@@ -10,6 +10,6 @@ class Sticker extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class,'sticker_user', 'sticker_id','user_id');
     }
 }

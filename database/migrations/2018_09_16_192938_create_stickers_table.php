@@ -25,6 +25,10 @@ class CreateStickersTable extends Migration
         Schema::create('sticker_user', function (Blueprint $table) {
             $table->unsignedInteger('sticker_id');
             $table->unsignedInteger('user_id');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('sticker_id')->references('id')->on('stickers')->onDelete('cascade');
+
             $table->primary(['sticker_id','user_id']);
         });
     }
@@ -38,7 +42,8 @@ class CreateStickersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stickers');
         Schema::dropIfExists('sticker_user');
+
+        Schema::dropIfExists('stickers');
     }
 }
