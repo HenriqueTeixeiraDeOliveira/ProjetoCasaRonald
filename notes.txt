@@ -77,13 +77,27 @@ Eighth Commit: Test for Stickers were created and minor issues were fixed
         2.  MODIFIED: Factory called "ModelFactories" to fix an issue related to the lesson state
         3.  MODIFIED: Unit Test called "a_video_can_belong_to_a_lesson"
 
-Ninth Commit: Views for sticker were created
+Ninth Commit: Views for stickers were created
         1.  CREATED: View called "sticker.index"
         2.  CREATED: View called "sticker.show"
         3.  CREATED: View called "sticker.create"
         4.  MODIFIED: Route file called "web" to add the new routes
         5.  MODIFIED: Controller called "StickerController" to add create and post methods
         6.  MODIFIED: Model called "Sticker" to update guarded settings
+
+Tenth Commit:
+        1.  CREATED: Model called "Role"
+        2.  CREATED: Migration called "create_roles_table"
+        3.  CREATED: Seed called "RolesTableSeeder"
+        4.  CREATED: Model called "Permission"
+        5.  CREATED: Migration called "create_permissions_table"
+        6.  CREATED: Seed called "PermissionsTableSeeder"
+        7.  CREATED: Trait called "HasRoles"
+        8.  MODIFIED: Factory called "ModelFactories" to add Role and Permission factory
+        9.  MODIFIED: Seed called "DatabaseSeeder" to add the Role and Permission tables
+        10. MODIFIED: Model called "User" to add roles relationship
+        11. MODIFIED: Seed called "UsersTableSeeder" to assign roles for Users
+        12. MODIFIED: Provider called "AuthServiceProvider" to add permissions
 
 
 

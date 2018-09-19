@@ -22,6 +22,20 @@ $factory->define(App\User::class, function (Faker $faker) {
     ];
 });
 
+$factory->define(App\Role::class, function (Faker $faker) {
+    return [
+        'name' => $faker->word,
+        'description' => $faker->sentence
+    ];
+});
+
+$factory->define(App\Permission::class, function (Faker $faker) {
+    return [
+        'name' => $faker->word,
+        'description' => $faker->sentence
+    ];
+});
+
 $factory->define(App\Video::class, function (Faker $faker) {
     return [
         'user_id' => function() {
