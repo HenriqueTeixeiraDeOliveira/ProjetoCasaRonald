@@ -99,7 +99,7 @@ Tenth Commit:
         11. MODIFIED: Seed called "UsersTableSeeder" to assign roles for Users
         12. MODIFIED: Provider called "AuthServiceProvider" to add permissions
 
-Eleventh Commit:
+Eleventh Commit: Database migration issue was fixed
 
         1. MODIFIED: Model called "User" to make the keys explicit
         2. MODIFIED: Model called "Role" to make the keys explicit
@@ -110,6 +110,9 @@ Eleventh Commit:
         7. MODIFIED: Migration called "create_stickers_table" to fix drop table order issue and add the cascade onDelete
         8. MODIFIED: Provider called "AuthServiceProvider" to avoid database migration error
 
+Twelfth Commit: Laravel Mix
+
+        1.  INSTALL:    Laravel Mix
 
 
 
