@@ -39,6 +39,10 @@ Route::get('/sticker/{sticker}', 'StickerController@show');
 //Route::delete('/sticker/{sticker)', 'StickerController@destroy');
 
 
+Route::get('/profile/notifications', 'UserNotificationController@index');
+
+
+
 /*
 |   VERB            URI                     ACTION          ROUTE NAME
 |   GET             /example                index           example.index

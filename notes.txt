@@ -114,6 +114,23 @@ Twelfth Commit: Laravel Mix
 
         1.  INSTALL:    Laravel Mix
 
+Thirteenth Commit: Notification was created and stickers methods were extracted
+
+        1.  CREATED: Trait called "GetStickers"
+        2.  CREATED: Notification called "UserGotStickers"
+        3.  CREATED: Controller called "UserNotificationController"
+        4.  CREATED: Migration called "create_notifications_table"
+        5.  CREATED: View called "notification.index"
+        6.  RENAMED: Feature Test called "ExampleTest.php" to "NotificationTest.php"
+        7.  MODIFIED: Feature Test called "NotificationTest"
+            a. an_user_receives_a_notification_for_going_to_the_school
+            b. an_user_receives_a_notification_for_reading_a_book
+            c. an_user_receives_a_notification_for_doing_an_activity
+        8.  MODIFIED: Model User to extract the methods to a trait
+        9. MODIFIED: Route file called "web" to add the notifications route
+
+
+
 
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows

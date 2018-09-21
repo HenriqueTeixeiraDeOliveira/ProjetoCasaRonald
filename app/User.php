@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Traits\GetStickers;
 use App\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -9,7 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasRoles;
+    use Notifiable, HasRoles, GetStickers;
 
     /**
      * The attributes that are mass assignable.
@@ -42,32 +43,5 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Role::class,'role_user', 'user_id', 'role_id');
-    }
-
-    public function wentToSchool()
-    {
-        $this->chooseSticker('escola');
-    }
-
-    public function readOneBook()
-    {
-        $this->chooseSticker('livro');
-    }
-
-    public function didAnActivity()
-    {
-        $this->chooseSticker('atividade');
-    }
-
-    public function chooseSticker($type)
-    {
-        $stickers_type = Sticker::all()->where('type', $type)->pluck('id')->toArray();  // Find all the stickers from a specific type
-        $user_stickers = $this->stickers->pluck('id')->toArray();   // Find all the stickers that the User has
-        $result = array_diff($stickers_type,$user_stickers);        // Find out witch stickers the user does not have
-
-        if (!empty($result)) {
-            $key = array_rand($result);
-            $this->stickers()->attach($result[$key]);
-        }
     }
 }
