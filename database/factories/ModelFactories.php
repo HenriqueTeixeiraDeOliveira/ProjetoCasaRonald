@@ -1,6 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,6 +82,25 @@ $factory->define(App\Sticker::class, function (Faker $faker) {
         'registration' => (string)$faker->numberBetween(1000,5000),
         'photo_path' => $faker->word,
         'type' => $faker->randomElement(['escola','livro','atividade'])
+    ];
+});
+
+$factory->define(App\School::class, function (Faker $faker) {
+    return [
+        'topic' => $faker->word,
+        'date' => Carbon::now()
+    ];
+});
+$factory->define(App\Book::class, function (Faker $faker) {
+    return [
+        'title' => $faker->word,
+        'type' => $faker->randomElement(['comédia','drama','romance'])
+    ];
+});
+$factory->define(App\Event::class, function (Faker $faker) {
+    return [
+        'name' => $faker->word,
+        'date' => Carbon::now()
     ];
 });
 

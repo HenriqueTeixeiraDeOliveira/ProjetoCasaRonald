@@ -22,6 +22,10 @@ class DatabaseSeeder extends Seeder
         DB::table('advertisements')->delete();
         DB::table('lessons')->delete();
         DB::table('permissions')->delete();
+        DB::table('schools')->delete();
+        DB::table('books')->delete();
+        DB::table('events')->delete();
+        DB::table('actions')->delete();
         DB::table('role_user')->delete();
         DB::table('permission_role')->delete();
         DB::table('sticker_user')->delete();
@@ -32,6 +36,9 @@ class DatabaseSeeder extends Seeder
         $this->call(StickersTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
         $this->call(RolesTableSeeder::class);
+        $this->call(BooksTableSeeder::class);
+        $this->call(EventsTableSeeder::class);
+        $this->call(SchoolsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(VideosTableSeeder::class);
     }

@@ -114,7 +114,7 @@ Twelfth Commit: Laravel Mix
 
         1.  INSTALL:    Laravel Mix
 
-Thirteenth Commit: Notification was created and stickers methods were extracted
+Thirteenth Commit: Notification was created and stickers methods were extracted to a trait
 
         1.  CREATED: Trait called "GetStickers"
         2.  CREATED: Notification called "UserGotStickers"
@@ -129,8 +129,24 @@ Thirteenth Commit: Notification was created and stickers methods were extracted
         8.  MODIFIED: Model User to extract the methods to a trait
         9. MODIFIED: Route file called "web" to add the notifications route
 
+Fourteenth Commit:  Book, School and Events Models were created / Some relationships were created
 
-
+        1.  CREATED: Model called "Book"
+        2.  CREATED: Migration called "create_books_table"
+        3.  CREATED: Seed called "BooksTableSeeder"
+        4.  CREATED: Model called "School"
+        5.  CREATED: Migration called "create_schools_table"
+        6.  CREATED: Seed called "SchoolsTableSeeder"
+        7.  CREATED: Model called "Event"
+        8.  CREATED: Migration called "create_events_table"
+        9.  CREATED: Seed called "EventsTableSeeder"
+        10. CREATED: Migration called "create_actions_table" (pivot)
+        11. MODIFIED: Trait called "GetStickers" to hide method
+        12. MODIFIED: Model called "User" to add the polymorphic relationships
+        13. MODIFIED: Factory called "ModelFactories" to add Book, School and Event factories
+        14. MODIFIED: Seed called "DatabaseSeeder" to add the Book, School and Event tables
+        15. MODIFIED: Seed called "UserTableSeeder" to attach book, school and events
+        16. MODIFIED: view called "layouts.navbar" to add be able to access lesson through the navbar
 
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows

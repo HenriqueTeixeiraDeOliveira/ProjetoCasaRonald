@@ -42,30 +42,6 @@ trait GetStickers
         }
     }
 
-//    public function stickerNotification($sticker, $type){
-//        if($type == 'escola') {
-//            if (!empty($sticker)){
-//                $message = 'Parabéns! Você acaba de receber a figurinha ' . $sticker->name . ' por ter ido à escola';
-//            } else {
-//                $message = 'Você já recebeu todas as figurinhas por ter ido à escola';
-//            }
-//        } elseif($type == 'livro') {
-//            if (!empty($sticker)){
-//                $message = 'Parabéns! Você acaba de receber a figurinha ' . $sticker->name . ' por ter lido um livro';
-//            } else {
-//                $message = 'Você já recebeu todas as figurinhas por ter lido livros';
-//            }
-//        } elseif($type == 'atividade') {
-//            if (!empty($sticker)){
-//                $message = 'Parabéns! Você acaba de receber a figurinha ' . $sticker->name . ' por ter feito uma atividade';
-//            } else {
-//                $message = 'Você já recebeu todas as figurinhas por ter ido em atividades extras';
-//            }
-//        }
-//
-//        $this->notify(new UserGotStickers($message));
-//    }
-
     public function stickerNotification($sticker, $type){
         if (!empty($sticker)) {
             if ($type == 'escola') {

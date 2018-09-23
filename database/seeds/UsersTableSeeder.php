@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use App\Role;
+use App\School;
+use App\Book;
+use App\Event;
 
 class UsersTableSeeder extends Seeder
 {
@@ -16,6 +19,10 @@ class UsersTableSeeder extends Seeder
         $role_student = Role::where('name', 'Student')->first();
         $role_professor = Role::where('name', 'Professor')->first();
 
+        $school = School::where('topic', 'Tabuada')->first();
+        $book = Book::where('title', 'Dois a Dois')->first();
+        $event = Event::where('name', 'Páscoa')->first();
+
         $user1 = factory('App\User')->create([
             'name' => 'John Doe',
             'email' => 'john.doe@example.com',
@@ -23,6 +30,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         $user1->roles()->attach($role_admin);
+        $user1->schools()->attach($school);
 
         $user2 = factory('App\User')->create([
             'name' => 'Jane Doe',
@@ -31,6 +39,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         $user2->roles()->attach($role_student);
+        $user2->books()->attach($book);
 
         $user3 = factory('App\User')->create([
             'name' => 'Henrique Doe',
@@ -39,6 +48,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         $user3->roles()->attach($role_professor);
+        $user3->events()->attach($event);
 
         factory('App\User', 10)->create();
     }

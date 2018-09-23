@@ -44,4 +44,21 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class,'role_user', 'user_id', 'role_id');
     }
+
+    public function schools()
+    {
+        return $this->morphedByMany(School::class,'action');
+    }
+
+    public function books()
+    {
+        return $this->morphedByMany(Book::class,'action');
+    }
+
+    public function events()
+    {
+        return $this->morphedByMany(Event::class,'action');
+    }
+
+
 }
