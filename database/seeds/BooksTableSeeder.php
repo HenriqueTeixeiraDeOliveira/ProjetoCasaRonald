@@ -14,5 +14,8 @@ class BooksTableSeeder extends Seeder
         factory('App\Book')->create(['title' => 'Dois a Dois', 'type' => 'romance']);
         factory('App\Book')->create(['title' => 'A culpa é das estrelas', 'type' => 'drama']);
         factory('App\Book')->create(['title' => 'Garotos da Fuzarca', 'type' => 'comédia']);
+        factory('App\Book')->create(['title' => 'Diário de uma Paixão', 'type' => 'romance']);
+        factory('App\Book')->create(['title' => 'A menina que roubava livros', 'type' => 'drama']);
+        factory('App\Book')->create(['title' => 'O astronauta sem regime', 'type' => 'comédia']);
     }
 }

@@ -148,6 +148,14 @@ Fourteenth Commit:  Book, School and Events Models were created / Some relations
         15. MODIFIED: Seed called "UserTableSeeder" to attach book, school and events
         16. MODIFIED: view called "layouts.navbar" to add be able to access lesson through the navbar
 
+Fifteenth Commit: GetStickers methods were improved / Added more data to the database seeding.
+
+        1.  MODIFIED: Models called Book, Event, Permission, Role, School, Sticker and User to add timestamps to the pivot tables
+        2.  MODIFIED: Seeds for Books, Events, Schools, Stickers, Videos to add more dummy data
+        3.  MODIFIED: Migrations stickers, roles and permissions to add timestamps for the pivot tables
+        4.  MODIFIED: Trait called "GetStickers" to make it possible to record the actions
+        5.  MODIFIED: Tests called "NotificationsTest" and "UserTest" to change the methods arguments
+
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git

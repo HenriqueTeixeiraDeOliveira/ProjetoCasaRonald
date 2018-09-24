@@ -37,27 +37,27 @@ class User extends Authenticatable
 
     public function stickers()
     {
-        return $this->belongsToMany(Sticker::class, 'sticker_user', 'user_id','sticker_id');
+        return $this->belongsToMany(Sticker::class, 'sticker_user', 'user_id','sticker_id')->withTimestamps();
     }
 
     public function roles()
     {
-        return $this->belongsToMany(Role::class,'role_user', 'user_id', 'role_id');
+        return $this->belongsToMany(Role::class,'role_user', 'user_id', 'role_id')->withTimestamps();
     }
 
     public function schools()
     {
-        return $this->morphedByMany(School::class,'action');
+        return $this->morphedByMany(School::class,'action')->withTimestamps();
     }
 
     public function books()
     {
-        return $this->morphedByMany(Book::class,'action');
+        return $this->morphedByMany(Book::class,'action')->withTimestamps();
     }
 
     public function events()
     {
-        return $this->morphedByMany(Event::class,'action');
+        return $this->morphedByMany(Event::class,'action')->withTimestamps();
     }
 
 

@@ -15,29 +15,51 @@ class VideosTableSeeder extends Seeder
             'user_id' => 1,
             'watchable_type' => 'lesson',
             'watchable_id' => 1,
-            'url' => 'https://www.youtube.com/embed/VKztNiY5p5M'
         ]);
 
         factory('App\Video')->create([
             'user_id' => 1,
             'watchable_type' => 'advertisement',
-            'watchable_id' => 3,
-            'url' => 'https://www.youtube.com/embed/VKztNiY5p5M'
+            'watchable_id' => 1,
         ]);
 
         factory('App\Video')->create([
             'user_id' => 2,
             'watchable_type' => 'lesson',
             'watchable_id' => 2,
-            'url' => 'https://www.youtube.com/embed/VKztNiY5p5M'
         ]);
 
         factory('App\Video')->create([
             'user_id' => 2,
             'watchable_type' => 'advertisement',
             'watchable_id' => 2,
-            'url' => 'https://www.youtube.com/embed/VKztNiY5p5M'
         ]);
+
+        factory('App\Video')->create([
+            'user_id' => 1,
+            'watchable_type' => 'lesson',
+            'watchable_id' => 3,
+        ]);
+
+        factory('App\Video')->create([
+            'user_id' => 1,
+            'watchable_type' => 'advertisement',
+            'watchable_id' => 3,
+        ]);
+
+        factory('App\Video')->create([
+            'user_id' => 2,
+            'watchable_type' => 'lesson',
+            'watchable_id' => 4,
+        ]);
+
+        factory('App\Video')->create([
+            'user_id' => 2,
+            'watchable_type' => 'lesson',
+            'watchable_id' => 5,
+        ]);
+
+
     }
 }
 

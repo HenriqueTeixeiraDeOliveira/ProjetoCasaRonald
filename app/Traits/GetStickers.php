@@ -2,30 +2,42 @@
 
 namespace App\Traits;
 
+use App\Book;
+use App\Event;
 use App\Notifications\UserGotStickers;
+use App\School;
 use App\Sticker;
 
 trait GetStickers
 {
-    public function wentToSchool()
+    public function wentToSchool(School $school, $num_stickers)
     {
         $type = 'escola';
-        $sticker = $this->chooseSticker($type);
-        $this->stickerNotification($sticker, $type);
+        $this->schools()->attach($school);
+        for ($i = 1; $i <= $num_stickers; $i++) {
+            $sticker = $this->fresh()->chooseSticker($type);
+            $this->stickerNotification($sticker, $type);
+        }
     }
 
-    public function readOneBook()
+    public function readOneBook(Book $book, $num_stickers)
     {
         $type = 'livro';
-        $sticker = $this->chooseSticker($type);
-        $this->stickerNotification($sticker, $type);
+        $this->books()->attach($book);
+        for ($i = 1; $i <= $num_stickers; $i++) {
+            $sticker = $this->fresh()->chooseSticker($type);
+            $this->stickerNotification($sticker, $type);
+        }
     }
 
-    public function didAnActivity()
+    public function attendedAnEvent(Event $event, $num_stickers)
     {
         $type = 'atividade';
-        $sticker = $this->chooseSticker($type);
-        $this->stickerNotification($sticker, $type);
+        $this->events()->attach($event);
+        for ($i = 1; $i <= $num_stickers; $i++) {
+            $sticker = $this->fresh()->chooseSticker($type);
+            $this->stickerNotification($sticker, $type);
+        }
     }
 
     public function chooseSticker($type)

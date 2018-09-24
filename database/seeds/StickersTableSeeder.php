@@ -19,16 +19,16 @@ class StickersTableSeeder extends Seeder
         ]);
 
         factory('App\Sticker')->create([
-            'name' => 'Dirce Maria',
-            'registration' => '2510',
-            'photo_path' => 'dirce2510.jpeg',
+            'name' => 'Jessica Cunha',
+            'registration' => '2354',
+            'photo_path' => 'jessica2354.jpeg',
             'type' => 'livro'
         ]);
 
         factory('App\Sticker')->create([
-            'name' => 'Jessica Cunha',
-            'registration' => '2354',
-            'photo_path' => 'jessica2354.jpeg',
+            'name' => 'Dirce Maria',
+            'registration' => '2510',
+            'photo_path' => 'dirce2510.jpeg',
             'type' => 'atividade'
         ]);
 

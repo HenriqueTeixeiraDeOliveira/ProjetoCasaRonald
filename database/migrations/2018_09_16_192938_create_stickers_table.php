@@ -30,6 +30,7 @@ class CreateStickersTable extends Migration
             $table->foreign('sticker_id')->references('id')->on('stickers')->onDelete('cascade');
 
             $table->primary(['sticker_id','user_id']);
+            $table->timestamps();
         });
     }
 

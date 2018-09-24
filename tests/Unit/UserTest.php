@@ -13,15 +13,16 @@ class UserTest extends TestCase
     /** @test */
     public function an_user_can_be_awarded_for_going_to_the_school()
     {
+        $user = factory('App\User')->create();
+        $school = factory('App\School')->create();
+
         factory('App\Sticker')->create(['type' => 'escola']);
         factory('App\Sticker')->create(['type' => 'livro']);
         factory('App\Sticker')->create(['type' => 'atividade']);
 
-        $user = factory('App\User')->create();
-
         $this->assertCount(0, $user->stickers()->get());
 
-        $user->wentToSchool();
+        $user->wentToSchool($school,1);
 
         $this->assertCount(1, $user->stickers()->get());
         $this->assertTrue($user->stickers()->get()->contains('type','escola'));
@@ -30,15 +31,16 @@ class UserTest extends TestCase
     /** @test */
     public function an_user_can_be_awarded_for_reading_a_book()
     {
+        $user = factory('App\User')->create();
+        $book = factory('App\Book')->create();
+
         factory('App\Sticker')->create(['type' => 'escola']);
         factory('App\Sticker')->create(['type' => 'livro']);
         factory('App\Sticker')->create(['type' => 'atividade']);
 
-        $user = factory('App\User')->create();
-
         $this->assertCount(0, $user->stickers()->get());
 
-        $user->readOneBook();
+        $user->readOneBook($book,1);
 
         $this->assertCount(1, $user->stickers()->get());
         $this->assertTrue($user->stickers()->get()->contains('type','livro'));
@@ -47,15 +49,16 @@ class UserTest extends TestCase
     /** @test */
     public function an_user_can_be_awarded_for_doing_an_activity()
     {
+        $user = factory('App\User')->create();
+        $event = factory('App\Event')->create();
+
         factory('App\Sticker')->create(['type' => 'escola']);
         factory('App\Sticker')->create(['type' => 'livro']);
         factory('App\Sticker')->create(['type' => 'atividade']);
 
-        $user = factory('App\User')->create();
-
         $this->assertCount(0, $user->stickers()->get());
 
-        $user->didAnActivity();
+        $user->attendedAnEvent($event,1);
 
         $this->assertCount(1, $user->stickers()->get());
         $this->assertTrue($user->stickers()->get()->contains('type','atividade'));
