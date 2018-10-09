@@ -156,6 +156,9 @@ Fifteenth Commit: GetStickers methods were improved / Added more data to the dat
         4.  MODIFIED: Trait called "GetStickers" to make it possible to record the actions
         5.  MODIFIED: Tests called "NotificationsTest" and "UserTest" to change the methods arguments
 
+        
+        
+        
 
 * How to create alias at windows 10: https://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 * How do I exit from the text window in Git: https://stackoverflow.com/questions/9171356/how-do-i-exit-from-the-text-window-in-git

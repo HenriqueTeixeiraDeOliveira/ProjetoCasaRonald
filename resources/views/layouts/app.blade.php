@@ -7,14 +7,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Casa Ronald') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -22,12 +21,11 @@
 
 <body>
     <div id="app">
+        @include('layouts.header')
 
         @include('layouts.navbar')
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        @yield('content')
 
         @include('layouts.footer')
     </div>

@@ -1,0 +1,137 @@
+.header{
+  font-size: 14px;
+  height: 8rem;
+  border-top: 3px solid $yellow;
+  border-bottom: 1px solid black;
+  background-color: #ffffff;
+
+  .nav-bar {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.nav-bar {
+
+///// LOGO /////
+  .logo {
+    height: 7rem;
+    padding: 0.5rem;
+  }
+
+///// SEARCH-BAR ////////
+
+  .search {
+
+    display: flex;
+    flex: 0 0 40%;
+    justify-content: center;
+    align-items: center;
+    .search-input{
+      width: 90%;
+      height: 3.5rem;
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+      background-color: $grey-light;
+      border: none;
+      padding: .7rem 2rem;
+      border-radius: 5px;
+      margin-right: -3.25rem;
+      transition: all .2s;
+
+      &:focus {
+        outline: none;
+        width: 100%;
+        //background-color: $grey-dark;
+      }
+
+      &::-webkit-input-placeholder {
+        font-weight: 100;
+        color: gray;
+      }
+    }
+
+    //.search-input:focus + .search-button {
+    //  background-color: $grey-dark;
+    //}
+
+    .search-button {
+      border: none;
+      background-color: $grey-light;
+      transition: translateY .2s;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active {
+        transform: translateY(2px);
+      }
+
+    }
+
+    .search-icon{
+      height: 2rem;
+      width: 2rem;
+      margin-top: 0.3rem;
+      fill: white;
+    }
+
+  }
+
+///// USER - NAV ////////
+
+  .user-nav {
+
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+
+    .icon-box {
+      padding: 0 2rem;
+      cursor: pointer;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &:hover {
+        background-color: lightgrey;
+      }
+    }
+
+    .nav-icon {
+      height: 2.5rem;
+      width: 2.5rem;
+      fill: black;
+    }
+
+    .nav-notification {
+      font-size: .8rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 50%;
+      background-color: red;
+      color: white;
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .user-name {
+      margin-left: 1rem;
+    }
+  }
+
+}
+
+
+
+// & > * -> to select all the children

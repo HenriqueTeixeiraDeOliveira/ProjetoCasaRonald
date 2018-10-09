@@ -48,7 +48,7 @@ $factory->define(App\Video::class, function (Faker $faker) {
         },
         'title' => $faker->word,
         'description' => $faker->sentence,
-        'url' => 'https://www.youtube.com/embed/VKztNiY5p5M',
+        'url' => 'https://www.youtube.com/embed/py_KGUWSVns',
     ];
 });
 

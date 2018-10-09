@@ -1,3 +1,53 @@
+<nav class="sidebar">
+    <div class="container">
+        <ul class="main-nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <svg class="side-icon">
+                        <use xlink:href="{{asset('svg/sprite.svg#icon-clapperboard')}}"></use>
+                    </svg>
+                    <span class="item-name">Aulas</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <svg class="side-icon">
+                        <use xlink:href="{{asset('svg/sprite.svg#icon-pie-chart')}}"></use>
+                    </svg>
+                    <span class="item-name">Desempenho</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <svg class="side-icon">
+                        <use xlink:href="{{asset('svg/sprite.svg#icon-open-book')}}"></use>
+                    </svg>
+                    <span class="item-name">Álbum</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <svg class="side-icon">
+                        <use xlink:href="{{asset('svg/sprite.svg#icon-home')}}"></use>
+                    </svg>
+                    <span class="item-name">Doação</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <svg class="side-icon">
+                        <use xlink:href="{{asset('svg/sprite.svg#icon-globe')}}"></use>
+                    </svg>
+                    <span class="item-name">Contato</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+{{--
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
@@ -50,4 +100,4 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav>--}}
