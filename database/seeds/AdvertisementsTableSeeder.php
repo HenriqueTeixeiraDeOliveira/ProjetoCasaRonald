@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Advertisement;
 
 class AdvertisementsTableSeeder extends Seeder
 {
@@ -11,8 +12,8 @@ class AdvertisementsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory('App\Advertisement')->create(['campaign' => 'McDia Feliz', 'sponsor' => 'McDonalds']);
-        factory('App\Advertisement')->create(['campaign' => 'Setembro Dourado', 'sponsor' => 'Coniacc']);
-        factory('App\Advertisement')->create(['campaign' => 'Bazar das Mães', 'sponsor' => 'Casa Ronald']);
+        factory(Advertisement::class)->create(['campaign' => 'McDia Feliz', 'sponsor' => 'McDonalds']);
+        factory(Advertisement::class)->create(['campaign' => 'Setembro Dourado', 'sponsor' => 'Coniacc']);
+        factory(Advertisement::class)->create(['campaign' => 'Bazar das Mães', 'sponsor' => 'Casa Ronald']);
     }
 }

@@ -84,6 +84,7 @@ $factory->define(App\Video::class, function (Faker $faker) {
     ];
 });
 
+//------------------- SUBJECT -------------------//
 $factory->define(App\Subject::class, function (Faker $faker) {
     return [
         'field_id' => function() {
@@ -93,6 +94,7 @@ $factory->define(App\Subject::class, function (Faker $faker) {
     ];
 });
 
+//------------------- ADVERTISEMENT -------------------//
 $factory->define(App\Advertisement::class, function (Faker $faker) {
     return [
         'campaign' => $faker->word,
@@ -100,16 +102,14 @@ $factory->define(App\Advertisement::class, function (Faker $faker) {
     ];
 });
 
+//------------------- LESSON -------------------//
 $factory->define(App\Lesson::class, function (Faker $faker) {
-
-       // To make sure the subject and the professor belongs to the same field.
-
     return [
         'professor_id' => function () {
             $user = factory('App\User')->create([
                 'character_type' => 'professor',
                 'character_id' => function () {
-                    return factory(App\Professor::class)->create(['field_id' => 1])->id;
+                    return factory(App\Professor::class)->create(['field_id' => 1])->id; // To make sure the subject and the professor belongs to the same field.
                 }
             ]);
             return $user->character->id;
@@ -123,6 +123,7 @@ $factory->define(App\Lesson::class, function (Faker $faker) {
     ];
 });
 
+//------------------- STICKER -------------------//
 $factory->define(App\Sticker::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
@@ -132,18 +133,23 @@ $factory->define(App\Sticker::class, function (Faker $faker) {
     ];
 });
 
+//------------------- SCHOOL CLASSES -------------------//
 $factory->define(App\School::class, function (Faker $faker) {
     return [
         'topic' => $faker->word,
         'date' => Carbon::now()
     ];
 });
+
+//------------------- BOOK -------------------//
 $factory->define(App\Book::class, function (Faker $faker) {
     return [
         'title' => $faker->word,
         'type' => $faker->randomElement(['comédia','drama','romance'])
     ];
 });
+
+//------------------- EVENT -------------------//
 $factory->define(App\Event::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
@@ -151,8 +157,16 @@ $factory->define(App\Event::class, function (Faker $faker) {
     ];
 });
 
-
+//------------------- FIELD -------------------//
 $factory->define(App\Field::class, function (Faker $faker) {
+    return [
+        'title' => $faker->word
+    ];
+});
+
+
+//------------------- TAG -------------------//
+$factory->define(App\Tag::class, function (Faker $faker) {
     return [
         'title' => $faker->word
     ];

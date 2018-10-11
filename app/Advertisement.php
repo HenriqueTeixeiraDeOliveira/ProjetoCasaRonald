@@ -10,4 +10,8 @@ class Advertisement extends Model
     {
         return $this->morphMany(Video::class, 'watchable');
     }
+
+    public function tags() {
+        return $this->morphToMany(Tag::class,'taggable')->withTimestamps();
+    }
 }

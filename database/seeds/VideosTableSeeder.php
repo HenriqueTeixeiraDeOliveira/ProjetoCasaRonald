@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Video;
 class VideosTableSeeder extends Seeder
 {
     /**
@@ -11,49 +11,49 @@ class VideosTableSeeder extends Seeder
      */
     public function run()
     {
-        factory('App\Video')->create([
+        factory(Video::class)->create([
             'user_id' => 1,
             'watchable_type' => 'lesson',
             'watchable_id' => 1,
         ]);
 
-        factory('App\Video')->create([
+        factory(Video::class)->create([
             'user_id' => 1,
             'watchable_type' => 'advertisement',
             'watchable_id' => 1,
         ]);
 
-        factory('App\Video')->create([
+        factory(Video::class)->create([
             'user_id' => 2,
             'watchable_type' => 'lesson',
             'watchable_id' => 2,
         ]);
 
-        factory('App\Video')->create([
+        factory(Video::class)->create([
             'user_id' => 2,
             'watchable_type' => 'advertisement',
             'watchable_id' => 2,
         ]);
 
-        factory('App\Video')->create([
+        factory(Video::class)->create([
             'user_id' => 1,
             'watchable_type' => 'lesson',
             'watchable_id' => 3,
         ]);
 
-        factory('App\Video')->create([
+        factory(Video::class)->create([
             'user_id' => 1,
             'watchable_type' => 'advertisement',
             'watchable_id' => 3,
         ]);
 
-        factory('App\Video')->create([
+        factory(Video::class)->create([
             'user_id' => 2,
             'watchable_type' => 'lesson',
             'watchable_id' => 4,
         ]);
 
-        factory('App\Video')->create([
+        factory(Video::class)->create([
             'user_id' => 2,
             'watchable_type' => 'lesson',
             'watchable_id' => 5,

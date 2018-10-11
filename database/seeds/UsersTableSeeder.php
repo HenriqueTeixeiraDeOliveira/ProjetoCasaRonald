@@ -5,6 +5,7 @@ use App\Role;
 use App\School;
 use App\Book;
 use App\Event;
+use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -23,7 +24,7 @@ class UsersTableSeeder extends Seeder
         $book = Book::where('title', 'Dois a Dois')->first();
         $event = Event::where('name', 'Páscoa')->first();
 
-        $user1 = factory('App\User')->state('manager')->create([
+        $user1 = factory(User::class)->state('manager')->create([
             'name' => 'John Doe',
             'email' => 'john.doe@example.com',
             'password' => bcrypt('admin')
@@ -31,7 +32,7 @@ class UsersTableSeeder extends Seeder
 
         $user1->roles()->attach($role_admin);
 
-        $user2 = factory('App\User')->state('student')->create([
+        $user2 = factory(User::class)->state('student')->create([
             'name' => 'Jane Doe',
             'email' => 'jane.doe@example.com',
             'password' => bcrypt('student')
@@ -43,7 +44,7 @@ class UsersTableSeeder extends Seeder
         $user2->events()->attach($event);
 
         for ($i = 1; $i<=7; $i++) {
-            $user3 = factory('App\User')->create([
+            $user3 = factory(User::class)->create([
                 'character_type' => 'professor',
                 'character_id' => function () use ($i) {
                     return factory(App\Professor::class)->create(['field_id' => $i])->id;

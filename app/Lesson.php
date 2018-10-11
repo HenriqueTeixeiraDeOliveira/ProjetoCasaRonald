@@ -27,4 +27,8 @@ class Lesson extends Model
     {
         return $this->subject->field();
     }
+
+    public function tags() {
+        return $this->morphToMany(Tag::class,'taggable')->withTimestamps();
+    }
 }

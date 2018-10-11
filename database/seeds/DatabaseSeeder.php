@@ -48,8 +48,12 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UsersTableSeeder::class);               // ROLES, SCHOOL, BOOK and EVENT DEPENDENCY
 
-        $this->call(AdvertisementsTableSeeder::class);      // NO DEPENDENCY
-        $this->call(LessonsTableSeeder::class);             // SUBJECT AND PROFESSOR(USER) DEPENDENCY
+        $this->call(TagsTableSeeder::class);                // NO DEPENDENCY
+
+        $this->call(AdvertisementsTableSeeder::class);      // TAG DEPENDENCY
+        $this->call(LessonsTableSeeder::class);             // TAG, SUBJECT, PROFESSOR(USER) DEPENDENCY
         $this->call(VideosTableSeeder::class);              // USER, ADVERTISEMENT and LESSONS DEPENDENCY
+
+
     }
 }
