@@ -3,6 +3,7 @@
 @section('content')
     <main class="main-wrapper">
 
+        {{-- Lesson Video --}}
         <div class="theater-wrapper">
             <div class="container">
                 <div class="theater">
@@ -11,15 +12,22 @@
             </div>
         </div>
 
+        {{-- Video Description --}}
         <div class="content-wrapper">
             <div class="container">
                 <div class="content">
                     <div class="content-title">
-                        <h1 class="lesson-title">{{$lesson->title}}</h1>
-                        <p class="lesson-prof">Prof. João da Silva</p>
+                        <h1 class="lesson-title">{{ $lesson->subject->name }}: {{ $lesson->title }}</h1>
+                        <p class="lesson-prof">Prof. {{ $lesson->professor->user->name }}</p>
                     </div>
                     <div>
-                        <p class="lesson-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dignissimos fugiat impedit maiores perferendis reiciendis ut vero. Aspernatur, nisi, veritatis?</p>
+                        <p class="lesson-description">{{ $lesson->description }}</p>
+                    </div>
+                    <div>
+                        <p>{{ $lesson->level }}</p>
+                        <p>{{ $lesson->subject->name }}</p>
+                        <p>{{ $lesson->created_at->diffForHumans() }}</p>
+                        <p>{{ $lesson->field->title }}</p>
                     </div>
                 </div>
             </div>

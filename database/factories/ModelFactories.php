@@ -14,15 +14,45 @@ use Carbon\Carbon;
 |
 */
 
+//------------------- USER -------------------//
 $factory->define(App\User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
+        'character_type' => 'student',
+        'character_id' => function() {
+            return factory(App\Student::class)->create()->id;
+        },
         'email' => $faker->unique()->safeEmail,
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
         'remember_token' => str_random(10),
     ];
 });
 
+//------------------- STUDENT -------------------//
+$factory->define(App\Student::class, function (Faker $faker) {
+    return [
+        'points' => 0
+    ];
+});
+
+//------------------- PROFESSOR -------------------//
+$factory->define(App\Professor::class, function (Faker $faker) {
+    return [
+        'field_id' => function() {
+            return factory(App\Field::class)->create()->id;
+        }
+    ];
+});
+
+//------------------- MANAGER -------------------//
+$factory->define(App\Manager::class, function (Faker $faker) {
+    return [
+        'department' => $faker->randomElement(['Secretaria','RH','Educação']),
+    ];
+});
+
+
+//------------------- ROLE -------------------//
 $factory->define(App\Role::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
@@ -30,6 +60,7 @@ $factory->define(App\Role::class, function (Faker $faker) {
     ];
 });
 
+//------------------- PERMISSION -------------------//
 $factory->define(App\Permission::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
@@ -37,14 +68,15 @@ $factory->define(App\Permission::class, function (Faker $faker) {
     ];
 });
 
+//------------------- VIDEO -------------------//
 $factory->define(App\Video::class, function (Faker $faker) {
     return [
         'user_id' => function() {
-            return factory (App\User::class)->create()->id;
+            return factory(App\User::class)->create()->id;
         },
         'watchable_type' => 'lesson',
         'watchable_id' => function() {
-            return factory (App\Lesson::class)->create()->id;
+            return factory(App\Lesson::class)->create()->id;
         },
         'title' => $faker->word,
         'description' => $faker->sentence,
@@ -54,8 +86,10 @@ $factory->define(App\Video::class, function (Faker $faker) {
 
 $factory->define(App\Subject::class, function (Faker $faker) {
     return [
-        'name' => $faker->word,
-        'field' => $faker->randomElement(['Matemática','Química','Geografia'])
+        'field_id' => function() {
+            return factory(App\Field::class)->create()->id;
+        },
+        'name' => $faker->word
     ];
 });
 
@@ -67,11 +101,24 @@ $factory->define(App\Advertisement::class, function (Faker $faker) {
 });
 
 $factory->define(App\Lesson::class, function (Faker $faker) {
+
+       // To make sure the subject and the professor belongs to the same field.
+
     return [
-        'subject_id' => function() {
-            return factory (App\Subject::class)->create()->id;
+        'professor_id' => function () {
+            $user = factory('App\User')->create([
+                'character_type' => 'professor',
+                'character_id' => function () {
+                    return factory(App\Professor::class)->create(['field_id' => 1])->id;
+                }
+            ]);
+            return $user->character->id;
+        },
+        'subject_id' => function () {
+            return factory (App\Subject::class)->create(['field_id' => 1])->id;
         },
         'title' => $faker->word,
+        'description' => $faker->sentence(20),
         'level' => $faker->randomElement(['Fácil','Intermediário','Difícil'])
     ];
 });
@@ -105,6 +152,11 @@ $factory->define(App\Event::class, function (Faker $faker) {
 });
 
 
+$factory->define(App\Field::class, function (Faker $faker) {
+    return [
+        'title' => $faker->word
+    ];
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -112,6 +164,33 @@ $factory->define(App\Event::class, function (Faker $faker) {
 |--------------------------------------------------------------------------
 */
 
+//------------------- STUDENT -------------------//
+$factory->state(App\User::class, 'student', [
+    'character_type' => 'student',
+    'character_id' => function() {
+        return factory (App\Student::class)->create()->id;
+    },
+]);
+
+//------------------- PROFESSOR -------------------//
+$factory->state(App\User::class, 'professor', [
+    'character_type' => 'professor',
+    'character_id' => function() {
+        return factory (App\Professor::class)->create()->id;
+    },
+]);
+
+//------------------- MANAGER -------------------//
+$factory->state(App\User::class, 'manager', [
+    'character_type' => 'manager',
+    'character_id' => function() {
+        return factory (App\Manager::class)->create()->id;
+    },
+]);
+
+
+
+//------------------- LESSON -------------------//
 $factory->state(App\Video::class, 'lesson', [
     'watchable_type' => 'lesson',
     'watchable_id' => function() {
@@ -119,6 +198,7 @@ $factory->state(App\Video::class, 'lesson', [
     },
 ]);
 
+//------------------- ADVERTISEMENT -------------------//
 $factory->state(App\Video::class, 'advertisement', [
     'watchable_type' => 'advertisement',
     'watchable_id' => function() {

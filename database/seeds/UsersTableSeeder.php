@@ -23,33 +23,35 @@ class UsersTableSeeder extends Seeder
         $book = Book::where('title', 'Dois a Dois')->first();
         $event = Event::where('name', 'Páscoa')->first();
 
-        $user1 = factory('App\User')->create([
+        $user1 = factory('App\User')->state('manager')->create([
             'name' => 'John Doe',
             'email' => 'john.doe@example.com',
             'password' => bcrypt('admin')
         ]);
 
         $user1->roles()->attach($role_admin);
-        $user1->schools()->attach($school);
 
-        $user2 = factory('App\User')->create([
+        $user2 = factory('App\User')->state('student')->create([
             'name' => 'Jane Doe',
             'email' => 'jane.doe@example.com',
             'password' => bcrypt('student')
         ]);
 
         $user2->roles()->attach($role_student);
+        $user2->schools()->attach($school);
         $user2->books()->attach($book);
+        $user2->events()->attach($event);
 
-        $user3 = factory('App\User')->create([
-            'name' => 'Henrique Doe',
-            'email' => 'henrique.doe@example.com',
-            'password' => bcrypt('professor')
-        ]);
+        for ($i = 1; $i<=7; $i++) {
+            $user3 = factory('App\User')->create([
+                'character_type' => 'professor',
+                'character_id' => function () use ($i) {
+                    return factory(App\Professor::class)->create(['field_id' => $i])->id;
+                },
+                'password' => bcrypt('professor')
+            ]);
+            $user3->roles()->attach($role_professor);
+        }
 
-        $user3->roles()->attach($role_professor);
-        $user3->events()->attach($event);
-
-        factory('App\User', 10)->create();
     }
 }

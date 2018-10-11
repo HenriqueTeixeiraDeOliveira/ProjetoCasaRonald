@@ -429,6 +429,7 @@ body {
           justify-content: space-between;
   -ms-flex-item-align: stretch;
       align-self: stretch;
+  margin-top: 2rem;
 }
 
 .main-wrapper .content-wrapper .lesson-title {

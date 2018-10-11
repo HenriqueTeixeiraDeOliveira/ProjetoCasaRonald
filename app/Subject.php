@@ -10,4 +10,11 @@ class Subject extends Model
     {
         return $this->hasMany(Lesson::class);
     }
+
+    public function field()
+    {
+        return $this->belongsTo(Field::class);
+    }
+
+
 }

@@ -19,8 +19,13 @@ class AppServiceProvider extends ServiceProvider
 
         Relation::morphMap([
             'lesson' => 'App\Lesson',
-            'advertisement' => 'App\Advertisement'
+            'advertisement' => 'App\Advertisement',
+            'professor' => 'App\Professor',
+            'student' => 'App\Student',
+            'manager' => 'App\Manager'
         ]);
+
+        \Carbon\Carbon::setLocale('pt_BR');  //To use Carbon in Portuguese
     }
 
     /**
@@ -30,6 +35,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
     }
 }

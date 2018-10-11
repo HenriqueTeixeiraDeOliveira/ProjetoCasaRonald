@@ -16,7 +16,9 @@ class CreateLessonsTable extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('subject_id');
+            $table->unsignedInteger('professor_id');
             $table->string('title');
+            $table->text('description');
             $table->string('level');
             $table->timestamps();
         });

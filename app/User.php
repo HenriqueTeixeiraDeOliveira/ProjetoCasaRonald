@@ -30,6 +30,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function character()
+    {
+        return $this->morphTo();
+    }
+
     public function videos()
     {
         return $this->hasMany(Video::class);

@@ -1,7 +1,9 @@
 <header class="header">
     <div class="container">
         <div class="nav-bar">
-            <img src="{{asset('images/logo.png')}}" alt="Casa Ronald Logo" class="logo">
+            <a href="/">
+                <img src="{{asset('images/logo.png')}}" alt="Casa Ronald Logo" class="logo">
+            </a>
             <form action="#" class="search">
                 <input type="text" class="search-input" placeholder="O que deseja encontrar?">
                 <button class="search-button">

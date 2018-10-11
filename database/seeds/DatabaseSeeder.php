@@ -15,9 +15,13 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         DB::table('users')->delete();
+        DB::table('professors')->delete();
+        DB::table('students')->delete();
+        DB::table('managers')->delete();
         DB::table('roles')->delete();
         DB::table('stickers')->delete();
         DB::table('videos')->delete();
+        DB::table('fields')->delete();
         DB::table('subjects')->delete();
         DB::table('advertisements')->delete();
         DB::table('lessons')->delete();
@@ -30,16 +34,22 @@ class DatabaseSeeder extends Seeder
         DB::table('permission_role')->delete();
         DB::table('sticker_user')->delete();
 
-        $this->call(SubjectsTableSeeder::class);
-        $this->call(AdvertisementsTableSeeder::class);
-        $this->call(LessonsTableSeeder::class);
-        $this->call(StickersTableSeeder::class);
-        $this->call(PermissionsTableSeeder::class);
-        $this->call(RolesTableSeeder::class);
-        $this->call(BooksTableSeeder::class);
-        $this->call(EventsTableSeeder::class);
-        $this->call(SchoolsTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
-        $this->call(VideosTableSeeder::class);
+
+        $this->call(PermissionsTableSeeder::class);         // NO DEPENDENCY
+        $this->call(RolesTableSeeder::class);               // PERMISSION DEPENDENCY
+
+        $this->call(SchoolsTableSeeder::class);             // NO DEPENDENCY
+        $this->call(BooksTableSeeder::class);               // NO DEPENDENCY
+        $this->call(EventsTableSeeder::class);              // NO DEPENDENCY
+        $this->call(StickersTableSeeder::class);            // NO DEPENDENCY
+
+        $this->call(FieldsTableSeeder::class);              // NO DEPENDENCY
+        $this->call(SubjectsTableSeeder::class);            // FIELD DEPENDENCY
+
+        $this->call(UsersTableSeeder::class);               // ROLES, SCHOOL, BOOK and EVENT DEPENDENCY
+
+        $this->call(AdvertisementsTableSeeder::class);      // NO DEPENDENCY
+        $this->call(LessonsTableSeeder::class);             // SUBJECT AND PROFESSOR(USER) DEPENDENCY
+        $this->call(VideosTableSeeder::class);              // USER, ADVERTISEMENT and LESSONS DEPENDENCY
     }
 }
