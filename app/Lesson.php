@@ -31,4 +31,8 @@ class Lesson extends Model
     public function tags() {
         return $this->morphToMany(Tag::class,'taggable')->withTimestamps();
     }
+
+    public function likes() {
+        return $this->morphToMany(User::class,'likable')->withTimestamps();
+    }
 }

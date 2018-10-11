@@ -65,5 +65,8 @@ class User extends Authenticatable
         return $this->morphedByMany(Event::class,'action')->withTimestamps();
     }
 
-
+    public function likedLessons()
+    {
+        return $this->morphedByMany(Lesson::class, 'likable')->withTimestamps();
+    }
 }

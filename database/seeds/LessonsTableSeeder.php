@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Tag;
 use App\Lesson;
+use App\User;
 
 class LessonsTableSeeder extends Seeder
 {
@@ -13,6 +14,10 @@ class LessonsTableSeeder extends Seeder
      */
     public function run()
     {
+        $user1 = User::where('id', '1')->first();
+        $user2 = User::where('id', '2')->first();
+        $user3 = User::where('id', '3')->first();
+
         $tag1 = Tag::where('title', 'Soma')->first();
         $tag2 = Tag::where('title', 'Subtração')->first();
         $tag3 = Tag::where('title', 'Multiplicação')->first();
@@ -32,6 +37,10 @@ class LessonsTableSeeder extends Seeder
         $lesson1->tags()->attach($tag2);
         $lesson1->tags()->attach($tag3);
         $lesson1->tags()->attach($tag4);
+
+        $lesson1->likes()->attach($user1);
+        $lesson1->likes()->attach($user2);
+        $lesson1->likes()->attach($user3);
 
         $lesson2 = factory(Lesson::class)->create([
             'subject_id' => 1,          //Análise Combinatória
