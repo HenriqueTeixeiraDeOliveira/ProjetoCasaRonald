@@ -53,3 +53,11 @@ Route::get('/profile/notifications', 'UserNotificationController@index');
 |   PUT/PATCH       /example/{key}          update          example.update
 |   DELETE          /example/{key}          destroy         example.destroy
 */
+
+/***********************TEST ROUTES***********************/
+
+Route::get('/test', function () {
+    \Illuminate\Support\Facades\Auth::loginUsingId(1, true);
+    return \App\Lesson::all();
+});
+

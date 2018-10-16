@@ -2,11 +2,18 @@
 
 namespace App;
 
+use App\Traits\Likable;
 use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
 {
+    use Likable;
+
     protected $guarded = [''];
+
+    protected $with = ['professor', 'likes'];
+
+    protected $appends = ['is_liked', 'likes_count'];
 
     public function video()
     {
@@ -30,9 +37,5 @@ class Lesson extends Model
 
     public function tags() {
         return $this->morphToMany(Tag::class,'taggable')->withTimestamps();
-    }
-
-    public function likes() {
-        return $this->morphToMany(User::class,'likable')->withTimestamps();
     }
 }
