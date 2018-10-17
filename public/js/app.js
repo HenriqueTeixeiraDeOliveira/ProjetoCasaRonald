@@ -13903,7 +13903,7 @@ window.Vue = __webpack_require__(36);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', __webpack_require__(39));
+Vue.component('like-button', __webpack_require__(39));
 
 var app = new Vue({
   el: '#app'
@@ -47206,7 +47206,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/ExampleComponent.vue"
+Component.options.__file = "resources/js/components/LikeButton.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -47215,9 +47215,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-299e239e", Component.options)
+    hotAPI.createRecord("data-v-2a9c25d4", Component.options)
   } else {
-    hotAPI.reload("data-v-299e239e", Component.options)
+    hotAPI.reload("data-v-2a9c25d4", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47352,16 +47352,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
+
+    props: ['lesson'],
+
+    data: function data() {
+        return {
+            likesCount: this.lesson.likesCount,
+            isLiked: this.lesson.isLiked
+        };
+    },
+
+
+    computed: {
+        classes: function classes() {
+            return ['like-button', this.isLiked ? 'liked' : 'not-liked'];
+        },
+        endpoint: function endpoint() {
+            return '/lesson/' + this.lesson.id + '/likes';
+        }
+    },
+
+    methods: {
+        toggle: function toggle() {
+            return this.isLiked ? this.unlike() : this.like();
+        },
+        like: function like() {
+            axios.post(this.endpoint);
+            this.isLiked = true;
+            this.likesCount++;
+        },
+        unlike: function unlike() {
+            axios.delete(this.endpoint);
+            this.isLiked = false;
+            this.likesCount--;
+        }
     }
 });
 
@@ -47373,29 +47399,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "button",
+    {
+      class: _vm.classes,
+      attrs: { type: "submit" },
+      on: { click: _vm.toggle }
+    },
+    [_vm._m(0), _vm._v("\n    " + _vm._s(_vm.likesCount) + " Likes\n")]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
-      ])
+    return _c("span", { staticClass: "like-icon" }, [
+      _c("div", { staticClass: "heart-animation-1" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "heart-animation-2" })
     ])
   }
 ]
@@ -47404,7 +47426,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-299e239e", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-2a9c25d4", module.exports)
   }
 }
 

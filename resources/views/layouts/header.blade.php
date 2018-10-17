@@ -28,7 +28,7 @@
                     <svg class="nav-icon">
                         <use xlink:href="{{asset('svg/sprite.svg#icon-user')}}"></use>
                     </svg>
-                    <span class="user-name">John Doe</span>
+                    <span class="user-name"> {{auth()->user()->name}} </span>
                 </div>
             </nav>
         {{--nav-bar--}}

@@ -29,6 +29,7 @@
                         <p>{{ $lesson->created_at->diffForHumans() }}</p>
                         <p>{{ $lesson->field->title }}</p>
                     </div>
+                    <like-button :lesson="{{ $lesson }}" ></like-button>
                 </div>
             </div>
         </div>

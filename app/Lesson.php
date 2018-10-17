@@ -13,7 +13,7 @@ class Lesson extends Model
 
     protected $with = ['professor', 'likes'];
 
-    protected $appends = ['is_liked', 'likes_count'];
+    protected $appends = ['isLiked', 'likesCount'];
 
     public function video()
     {

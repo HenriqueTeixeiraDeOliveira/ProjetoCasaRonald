@@ -36,7 +36,7 @@ trait Likable
 
         $attributes = ['user_id' => $user->id];
 
-        return $this->likes->where($attributes)->count() > 0 ? true : false;
+        return $this->likes()->where($attributes)->count() > 0 ? true : false;
     }
 
     public function getIsLikedAttribute()
@@ -46,7 +46,7 @@ trait Likable
 
     public function getLikesCountAttribute()
     {
-        return $this->likes->count();
+        return $this->likes()->count();
     }
 
 }

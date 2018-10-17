@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+//------------------- LESSON CONTROLLER -------------------//
 Route::get('/lesson', 'LessonController@index');
 Route::get('/lesson/create', 'LessonController@create');
 Route::post('/lesson', 'LessonController@store');
@@ -29,7 +29,7 @@ Route::get('/lesson/{lesson}', 'LessonController@show');
 //Route::delete('/lesson/{lesson)', 'LessonController@destroy');
 
 
-
+//------------------- STICKER CONTROLLER -------------------//
 Route::get('/sticker', 'StickerController@index');
 Route::get('/sticker/create', 'StickerController@create');
 Route::post('/sticker', 'StickerController@store');
@@ -38,10 +38,13 @@ Route::get('/sticker/{sticker}', 'StickerController@show');
 //Route::patch('/sticker/{sticker)', 'StickerController@update');
 //Route::delete('/sticker/{sticker)', 'StickerController@destroy');
 
-
+//------------------- USER NOTIFICATION CONTROLLER -------------------//
 Route::get('/profile/notifications', 'UserNotificationController@index');
 
 
+//------------------- LIKE CONTROLLER -------------------//
+Route::post('lesson/{lesson}/likes', 'LikeController@store');
+Route::delete('lesson/{lesson}/likes', 'LikeController@destroy');
 
 /*
 |   VERB            URI                     ACTION          ROUTE NAME

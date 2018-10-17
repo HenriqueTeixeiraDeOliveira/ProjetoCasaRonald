@@ -16,6 +16,7 @@
 @import "layout/sidebar";
 
 //COMPONENTS
+@import "components/likebutton";
 
 //PAGES
 @import "pages/lesson-show";
@@ -23,6 +24,7 @@
 //THEMES
 
 
+@import "/../../node_modules/font-awesome/scss/font-awesome.scss";
 
 /*
 @import
