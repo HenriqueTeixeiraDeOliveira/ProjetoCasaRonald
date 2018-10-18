@@ -38,9 +38,13 @@ class LessonsTableSeeder extends Seeder
         $lesson1->tags()->attach($tag3);
         $lesson1->tags()->attach($tag4);
 
-        $lesson1->likes()->attach($user1);
-        $lesson1->likes()->attach($user2);
-        $lesson1->likes()->attach($user3);
+        $lesson1->like($user1);
+        $lesson1->like($user2);
+        $lesson1->like($user3);
+
+        $lesson1->favorite($user1);
+        $lesson1->favorite($user2);
+        $lesson1->favorite($user3);
 
         $lesson2 = factory(Lesson::class)->create([
             'subject_id' => 1,          //Análise Combinatória

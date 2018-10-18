@@ -30,6 +30,7 @@
                         <p>{{ $lesson->field->title }}</p>
                     </div>
                     <like-button :lesson="{{ $lesson }}" ></like-button>
+                    <favorite-button :lesson="{{ $lesson }}" ></favorite-button>
                 </div>
             </div>
         </div>

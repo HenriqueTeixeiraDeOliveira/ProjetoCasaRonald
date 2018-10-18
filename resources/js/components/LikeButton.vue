@@ -30,7 +30,6 @@
         },
 
         methods: {
-
             toggle() {
                  return this.isLiked ? this.unlike() : this.like()
             },

@@ -1,0 +1,196 @@
+$gray: #c7c7c7;
+$yellow: #E6E600;
+$bezier: cubic-bezier(.175, .885, .32, 1.275);
+
+.favorite-button {
+  cursor: pointer;
+  border: 2px solid $gray;
+  border-radius: 40px;
+  padding: .45rem .75rem;
+  color: darken($gray, 25%);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all .25s $bezier;
+  filter: grayscale(100%);
+  user-select: none;
+  background-color: transparent;
+
+  &.favorited {
+    color: $yellow;
+    border-color: currentColor;
+    filter: grayscale(0);
+  }
+
+  &:hover {
+    border-color: currentColor;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+
+.favorite-icon {
+  width: 1.8rem;
+  height: 1.6rem;
+  display: inline-block;
+  position: relative;
+  margin-right: .25em;
+  font-size: 1.5rem;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31.201 29.676'><polygon points='15.602,0 19.325,11.279 31.2,11.332 21.624,18.36 25.243,29.676 15.602,22.738 5.96,29.676 9.577,18.36 0,11.332 11.878,11.279' fill='#E6E600' /></svg>") no-repeat center;
+  background-size: 100%;
+  animation: starUnlike .25s $bezier both;
+}
+
+.favorited .favorite-icon {
+  animation: starPulse .25s $bezier both;
+
+  [class^="star-animation-"] {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31.201 29.676'><polygon points='15.602,0 19.325,11.279 31.2,11.332 21.624,18.36 25.243,29.676 15.602,22.738 5.96,29.676 9.577,18.36 0,11.332 11.878,11.279' fill='#E6E600' /></svg>") no-repeat center;
+    background-size: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 14px;
+    opacity: 0;
+
+    &::before, &::after {
+      content: '';
+      background: inherit;
+      background-size: 100%;
+      width: inherit;
+      height: inherit;
+      display: inherit;
+      position: relative;
+      top: inherit;
+      left: inherit;
+      opacity: 0;
+    }
+  }
+
+  .star-animation-1 {
+    animation: starFloatMain-1 1s $bezier both;
+
+    &::before, &::after {
+      width: 12px;
+      height: 10px;
+      visibility: hidden;
+    }
+    &::before {
+      opacity: .6;
+      animation: starFloatSub-1 1s .25s $bezier both;
+    }
+    &::after {
+      animation: starFloatSub-2 1s .15s $bezier both;
+      opacity: .75;
+    }
+  }
+
+  .star-animation-2 {
+    animation: starFloatMain-2 1s .1s $bezier both;
+
+    &::before, &::after {
+      width: 10px;
+      height: 8px;
+      visibility: hidden;
+    }
+    &::before {
+      animation: starFloatSub-3 1s .25s $bezier both;
+      opacity: .25;
+    }
+    &::after {
+      animation: starFloatSub-4 1s .15s $bezier both;
+      opacity: .4;
+    }
+  }
+}
+
+
+// Animations
+@keyframes starPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes starUnlike {
+  50% { transform: scale(.75) ; }
+}
+
+@keyframes starFloatMain-1 {
+  0% {
+    opacity: 0;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, -25px) rotate(-20deg);
+  }
+}
+
+@keyframes starFloatMain-2 {
+  0% {
+    opacity: 0;
+    transform: translate(0) rotate(0) scale(0);
+  }
+  50% {
+    opacity: .9;
+    transform: translate(-10px, -38px) rotate(25deg) scale(1);
+  }
+}
+
+@keyframes starFloatSub-1 {
+  0% {
+    visibility: hidden;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    visibility: visible;
+    transform: translate(13px, -13px) rotate(30deg);
+  }
+}
+
+@keyframes starFloatSub-2 {
+  0% {
+    visibility: hidden;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    visibility: visible;
+    transform: translate(18px, -10px) rotate(55deg);
+  }
+}
+
+@keyframes starFloatSub-3 {
+  0% {
+    visibility: hidden;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    visibility: visible;
+    transform: translate(-10px, -10px) rotate(-40deg);
+  }
+  100% {
+    transform: translate(-50px, 0);
+  }
+}
+
+@keyframes starFloatSub-4 {
+  0% {
+    visibility: hidden;
+    transform: translate(0) rotate(0);
+  }
+  50% {
+    visibility: visible;
+    transform: translate(2px, -18px) rotate(-25deg);
+  }
+}

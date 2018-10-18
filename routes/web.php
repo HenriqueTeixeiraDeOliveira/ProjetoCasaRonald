@@ -46,6 +46,10 @@ Route::get('/profile/notifications', 'UserNotificationController@index');
 Route::post('lesson/{lesson}/likes', 'LikeController@store');
 Route::delete('lesson/{lesson}/likes', 'LikeController@destroy');
 
+//------------------- FAVORITE CONTROLLER -------------------//
+Route::post('lesson/{lesson}/favorites', 'FavoriteController@store');
+Route::delete('lesson/{lesson}/favorites', 'FavoriteController@destroy');
+
 /*
 |   VERB            URI                     ACTION          ROUTE NAME
 |   GET             /example                index           example.index
