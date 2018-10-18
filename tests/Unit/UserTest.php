@@ -2,6 +2,11 @@
 
 namespace Tests\Unit;
 
+use App\Book;
+use App\Event;
+use App\School;
+use App\Sticker;
+use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -13,12 +18,12 @@ class UserTest extends TestCase
     /** @test */
     public function an_user_can_be_awarded_for_going_to_the_school()
     {
-        $user = factory('App\User')->create();
-        $school = factory('App\School')->create();
+        $user = create(User::class);
+        $school = create(School::class);
 
-        factory('App\Sticker')->create(['type' => 'escola']);
-        factory('App\Sticker')->create(['type' => 'livro']);
-        factory('App\Sticker')->create(['type' => 'atividade']);
+        create(Sticker::class,['type' => 'escola']);
+        create(Sticker::class,['type' => 'livro']);
+        create(Sticker::class,['type' => 'atividade']);
 
         $this->assertCount(0, $user->stickers()->get());
 
@@ -31,12 +36,12 @@ class UserTest extends TestCase
     /** @test */
     public function an_user_can_be_awarded_for_reading_a_book()
     {
-        $user = factory('App\User')->create();
-        $book = factory('App\Book')->create();
+        $user = create(User::class);
+        $book = create(Book::class);
 
-        factory('App\Sticker')->create(['type' => 'escola']);
-        factory('App\Sticker')->create(['type' => 'livro']);
-        factory('App\Sticker')->create(['type' => 'atividade']);
+        create(Sticker::class,['type' => 'escola']);
+        create(Sticker::class,['type' => 'livro']);
+        create(Sticker::class,['type' => 'atividade']);
 
         $this->assertCount(0, $user->stickers()->get());
 
@@ -49,12 +54,12 @@ class UserTest extends TestCase
     /** @test */
     public function an_user_can_be_awarded_for_doing_an_activity()
     {
-        $user = factory('App\User')->create();
-        $event = factory('App\Event')->create();
+        $user = create(User::class);
+        $event = create(Event::class);
 
-        factory('App\Sticker')->create(['type' => 'escola']);
-        factory('App\Sticker')->create(['type' => 'livro']);
-        factory('App\Sticker')->create(['type' => 'atividade']);
+        create(Sticker::class,['type' => 'escola']);
+        create(Sticker::class,['type' => 'livro']);
+        create(Sticker::class,['type' => 'atividade']);
 
         $this->assertCount(0, $user->stickers()->get());
 

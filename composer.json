@@ -30,14 +30,14 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "files": ["tests/Utilities/functions.php"]
     },
     "extra": {
         "laravel": {
             "dont-discover": [
             ]
-        },
-        "files": ["tests/utilities/functions.php"]
+        }
     },
     "scripts": {
         "post-root-package-install": [

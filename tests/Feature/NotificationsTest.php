@@ -2,6 +2,11 @@
 
 namespace Tests\Feature;
 
+use App\Book;
+use App\Event;
+use App\School;
+use App\Sticker;
+use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -13,9 +18,11 @@ class NotificationsTest extends TestCase
     /** @test */
     public function an_user_receives_a_notification_for_going_to_the_school()
     {
-        $user = factory('App\User')->create();
-        $school = factory('App\School')->create();
-        factory('App\Sticker')->create(['type' => 'escola']);
+        $user = create(User::class);
+
+        $school = create(School::class);
+
+        create(Sticker::class,['type' => 'escola']);
 
         $this->assertCount(0, $user->notifications()->get());
 
@@ -27,10 +34,11 @@ class NotificationsTest extends TestCase
     /** @test */
     public function an_user_receives_a_notification_for_reading_a_book()
     {
-        $user = factory('App\User')->create();
-        $book = factory('App\Book')->create();
+        $user = create(User::class);
 
-        factory('App\Sticker')->create(['type' => 'livro']);
+        $book = create(Book::class);
+
+        create(Sticker::class,['type' => 'livro']);
 
         $this->assertCount(0, $user->notifications()->get());
 
@@ -42,10 +50,11 @@ class NotificationsTest extends TestCase
     /** @test */
     public function an_user_receives_a_notification_for_attending_an_event()
     {
-        $user = factory('App\User')->create();
-        $event = factory('App\Event')->create();
+        $user = create(User::class);
 
-        factory('App\Sticker')->create(['type' => 'atividade']);
+        $event = create(Event::class);
+
+        create(Sticker::class,['type' => 'atividade']);
 
         $this->assertCount(0, $user->notifications()->get());
 
