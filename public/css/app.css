@@ -82,8 +82,9 @@ body {
 
 .information-wrapper {
   width: 100%;
-  height: 18rem;
-  background-color: #6946a0;
+  height: 19rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#fff));
+  background-image: linear-gradient(180deg, #fafafa, #fff);
 }
 
 .information-wrapper .information {
@@ -96,7 +97,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
 .information-wrapper .information > * {
@@ -112,6 +113,7 @@ body {
 
 .information-wrapper .company-msg {
   text-align: justify;
+  font-size: 1.2rem;
 }
 
 .information-wrapper .links-info {
@@ -127,6 +129,8 @@ body {
 .information-wrapper .link-site {
   text-decoration: none;
   font-size: 1.2rem;
+  font-weight: bold;
+  color: #0276FD;
 }
 
 .information-wrapper .contact-box {
@@ -147,10 +151,10 @@ body {
 }
 
 .information-wrapper .contact-icon {
-  width: 1.7rem;
-  height: 1.7rem;
-  fill: white;
-  margin-right: 1.4rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: black;
+  margin-right: 1rem;
 }
 
 .copyright-wrapper {
@@ -387,6 +391,222 @@ body {
   color: gray;
 }
 
+@-webkit-keyframes iconPulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes iconPulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@-webkit-keyframes iconContract {
+  50% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+}
+
+@keyframes iconContract {
+  50% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+}
+
+@-webkit-keyframes iconFloatMain-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0) rotate(0);
+            transform: translate(0) rotate(0);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: translate(0, -25px) rotate(-20deg);
+            transform: translate(0, -25px) rotate(-20deg);
+  }
+}
+
+@keyframes iconFloatMain-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0) rotate(0);
+            transform: translate(0) rotate(0);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: translate(0, -25px) rotate(-20deg);
+            transform: translate(0, -25px) rotate(-20deg);
+  }
+}
+
+@-webkit-keyframes iconFloatMain-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0) rotate(0) scale(0);
+            transform: translate(0) rotate(0) scale(0);
+  }
+
+  50% {
+    opacity: .9;
+    -webkit-transform: translate(-10px, -38px) rotate(25deg) scale(1);
+            transform: translate(-10px, -38px) rotate(25deg) scale(1);
+  }
+}
+
+@keyframes iconFloatMain-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0) rotate(0) scale(0);
+            transform: translate(0) rotate(0) scale(0);
+  }
+
+  50% {
+    opacity: .9;
+    -webkit-transform: translate(-10px, -38px) rotate(25deg) scale(1);
+            transform: translate(-10px, -38px) rotate(25deg) scale(1);
+  }
+}
+
+@-webkit-keyframes iconFloatSub-1 {
+  0% {
+    visibility: hidden;
+    -webkit-transform: translate(0) rotate(0);
+            transform: translate(0) rotate(0);
+  }
+
+  50% {
+    visibility: visible;
+    -webkit-transform: translate(13px, -13px) rotate(30deg);
+            transform: translate(13px, -13px) rotate(30deg);
+  }
+}
+
+@keyframes iconFloatSub-1 {
+  0% {
+    visibility: hidden;
+    -webkit-transform: translate(0) rotate(0);
+            transform: translate(0) rotate(0);
+  }
+
+  50% {
+    visibility: visible;
+    -webkit-transform: translate(13px, -13px) rotate(30deg);
+            transform: translate(13px, -13px) rotate(30deg);
+  }
+}
+
+@-webkit-keyframes iconFloatSub-2 {
+  0% {
+    visibility: hidden;
+    -webkit-transform: translate(0) rotate(0);
+            transform: translate(0) rotate(0);
+  }
+
+  50% {
+    visibility: visible;
+    -webkit-transform: translate(18px, -10px) rotate(55deg);
+            transform: translate(18px, -10px) rotate(55deg);
+  }
+}
+
+@keyframes iconFloatSub-2 {
+  0% {
+    visibility: hidden;
+    -webkit-transform: translate(0) rotate(0);
+            transform: translate(0) rotate(0);
+  }
+
+  50% {
+    visibility: visible;
+    -webkit-transform: translate(18px, -10px) rotate(55deg);
+            transform: translate(18px, -10px) rotate(55deg);
+  }
+}
+
+@-webkit-keyframes iconFloatSub-3 {
+  0% {
+    visibility: hidden;
+    -webkit-transform: translate(0) rotate(0);
+            transform: translate(0) rotate(0);
+  }
+
+  50% {
+    visibility: visible;
+    -webkit-transform: translate(-10px, -10px) rotate(-40deg);
+            transform: translate(-10px, -10px) rotate(-40deg);
+  }
+
+  100% {
+    -webkit-transform: translate(-50px, 0);
+            transform: translate(-50px, 0);
+  }
+}
+
+@keyframes iconFloatSub-3 {
+  0% {
+    visibility: hidden;
+    -webkit-transform: translate(0) rotate(0);
+            transform: translate(0) rotate(0);
+  }
+
+  50% {
+    visibility: visible;
+    -webkit-transform: translate(-10px, -10px) rotate(-40deg);
+            transform: translate(-10px, -10px) rotate(-40deg);
+  }
+
+  100% {
+    -webkit-transform: translate(-50px, 0);
+            transform: translate(-50px, 0);
+  }
+}
+
+@-webkit-keyframes iconFloatSub-4 {
+  0% {
+    visibility: hidden;
+    -webkit-transform: translate(0) rotate(0);
+            transform: translate(0) rotate(0);
+  }
+
+  50% {
+    visibility: visible;
+    -webkit-transform: translate(2px, -18px) rotate(-25deg);
+            transform: translate(2px, -18px) rotate(-25deg);
+  }
+}
+
+@keyframes iconFloatSub-4 {
+  0% {
+    visibility: hidden;
+    -webkit-transform: translate(0) rotate(0);
+            transform: translate(0) rotate(0);
+  }
+
+  50% {
+    visibility: visible;
+    -webkit-transform: translate(2px, -18px) rotate(-25deg);
+            transform: translate(2px, -18px) rotate(-25deg);
+  }
+}
+
 .like-button {
   cursor: pointer;
   border: 2px solid #c7c7c7;
@@ -439,13 +659,13 @@ body {
   font-size: 1.5rem;
   background: url('data:image/svg+xml;utf8,<svg width="21" height="18" viewBox="0 0 21 18" xmlns="http://www.w3.org/2000/svg"><title>heart-colored</title><path d="M10.101 4.417S8.895.207 5.111.207c-4.465 0-10.967 6.846 5.082 17.592C25.237 7.03 19.665.202 15.501.202c-4.162 0-5.4 4.215-5.4 4.215z" fill="#FF6E6F" fill-rule="evenodd"/></svg>') no-repeat center;
   background-size: 100%;
-  -webkit-animation: heartUnlike 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: heartUnlike 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconContract 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconContract 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .liked .like-icon {
-  -webkit-animation: heartPulse 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: heartPulse 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconPulse 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconPulse 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .liked .like-icon [class^="heart-animation-"] {
@@ -475,8 +695,8 @@ body {
 }
 
 .liked .like-icon .heart-animation-1 {
-  -webkit-animation: heartFloatMain-1 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: heartFloatMain-1 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconFloatMain-1 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatMain-1 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .liked .like-icon .heart-animation-1::before,
@@ -488,19 +708,19 @@ body {
 
 .liked .like-icon .heart-animation-1::before {
   opacity: .6;
-  -webkit-animation: heartFloatSub-1 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: heartFloatSub-1 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconFloatSub-1 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatSub-1 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .liked .like-icon .heart-animation-1::after {
-  -webkit-animation: heartFloatSub-2 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: heartFloatSub-2 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconFloatSub-2 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatSub-2 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   opacity: .75;
 }
 
 .liked .like-icon .heart-animation-2 {
-  -webkit-animation: heartFloatMain-2 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: heartFloatMain-2 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconFloatMain-2 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatMain-2 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .liked .like-icon .heart-animation-2::before,
@@ -511,231 +731,15 @@ body {
 }
 
 .liked .like-icon .heart-animation-2::before {
-  -webkit-animation: heartFloatSub-3 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: heartFloatSub-3 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconFloatSub-3 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatSub-3 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   opacity: .25;
 }
 
 .liked .like-icon .heart-animation-2::after {
-  -webkit-animation: heartFloatSub-4 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: heartFloatSub-4 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconFloatSub-4 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatSub-4 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   opacity: .4;
-}
-
-@-webkit-keyframes heartPulse {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-
-  50% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
-}
-
-@keyframes heartPulse {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-
-  50% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
-}
-
-@-webkit-keyframes heartUnlike {
-  50% {
-    -webkit-transform: scale(0.75);
-            transform: scale(0.75);
-  }
-}
-
-@keyframes heartUnlike {
-  50% {
-    -webkit-transform: scale(0.75);
-            transform: scale(0.75);
-  }
-}
-
-@-webkit-keyframes heartFloatMain-1 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    opacity: 1;
-    -webkit-transform: translate(0, -25px) rotate(-20deg);
-            transform: translate(0, -25px) rotate(-20deg);
-  }
-}
-
-@keyframes heartFloatMain-1 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    opacity: 1;
-    -webkit-transform: translate(0, -25px) rotate(-20deg);
-            transform: translate(0, -25px) rotate(-20deg);
-  }
-}
-
-@-webkit-keyframes heartFloatMain-2 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate(0) rotate(0) scale(0);
-            transform: translate(0) rotate(0) scale(0);
-  }
-
-  50% {
-    opacity: .9;
-    -webkit-transform: translate(-10px, -38px) rotate(25deg) scale(1);
-            transform: translate(-10px, -38px) rotate(25deg) scale(1);
-  }
-}
-
-@keyframes heartFloatMain-2 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate(0) rotate(0) scale(0);
-            transform: translate(0) rotate(0) scale(0);
-  }
-
-  50% {
-    opacity: .9;
-    -webkit-transform: translate(-10px, -38px) rotate(25deg) scale(1);
-            transform: translate(-10px, -38px) rotate(25deg) scale(1);
-  }
-}
-
-@-webkit-keyframes heartFloatSub-1 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(13px, -13px) rotate(30deg);
-            transform: translate(13px, -13px) rotate(30deg);
-  }
-}
-
-@keyframes heartFloatSub-1 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(13px, -13px) rotate(30deg);
-            transform: translate(13px, -13px) rotate(30deg);
-  }
-}
-
-@-webkit-keyframes heartFloatSub-2 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(18px, -10px) rotate(55deg);
-            transform: translate(18px, -10px) rotate(55deg);
-  }
-}
-
-@keyframes heartFloatSub-2 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(18px, -10px) rotate(55deg);
-            transform: translate(18px, -10px) rotate(55deg);
-  }
-}
-
-@-webkit-keyframes heartFloatSub-3 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(-10px, -10px) rotate(-40deg);
-            transform: translate(-10px, -10px) rotate(-40deg);
-  }
-
-  100% {
-    -webkit-transform: translate(-50px, 0);
-            transform: translate(-50px, 0);
-  }
-}
-
-@keyframes heartFloatSub-3 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(-10px, -10px) rotate(-40deg);
-            transform: translate(-10px, -10px) rotate(-40deg);
-  }
-
-  100% {
-    -webkit-transform: translate(-50px, 0);
-            transform: translate(-50px, 0);
-  }
-}
-
-@-webkit-keyframes heartFloatSub-4 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(2px, -18px) rotate(-25deg);
-            transform: translate(2px, -18px) rotate(-25deg);
-  }
-}
-
-@keyframes heartFloatSub-4 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(2px, -18px) rotate(-25deg);
-            transform: translate(2px, -18px) rotate(-25deg);
-  }
 }
 
 .favorite-button {
@@ -764,10 +768,12 @@ body {
       -ms-user-select: none;
           user-select: none;
   background-color: transparent;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .favorite-button.favorited {
-  color: #E6E600;
+  color: #FFCC00;
   border-color: currentColor;
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
@@ -788,19 +794,19 @@ body {
   position: relative;
   margin-right: .25em;
   font-size: 1.5rem;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31.201 29.676'><polygon points='15.602,0 19.325,11.279 31.2,11.332 21.624,18.36 25.243,29.676 15.602,22.738 5.96,29.676 9.577,18.36 0,11.332 11.878,11.279' fill='#E6E600' /></svg>") no-repeat center;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31.201 29.676'><polygon points='15.602,0 19.325,11.279 31.2,11.332 21.624,18.36 25.243,29.676 15.602,22.738 5.96,29.676 9.577,18.36 0,11.332 11.878,11.279' fill='#FFCC00' /></svg>") no-repeat center;
   background-size: 100%;
-  -webkit-animation: starUnlike 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: starUnlike 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconContract 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconContract 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .favorited .favorite-icon {
-  -webkit-animation: starPulse 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: starPulse 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconPulse 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconPulse 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .favorited .favorite-icon [class^="star-animation-"] {
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31.201 29.676'><polygon points='15.602,0 19.325,11.279 31.2,11.332 21.624,18.36 25.243,29.676 15.602,22.738 5.96,29.676 9.577,18.36 0,11.332 11.878,11.279' fill='#E6E600' /></svg>") no-repeat center;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 31.201 29.676'><polygon points='15.602,0 19.325,11.279 31.2,11.332 21.624,18.36 25.243,29.676 15.602,22.738 5.96,29.676 9.577,18.36 0,11.332 11.878,11.279' fill='#FFCC00' /></svg>") no-repeat center;
   background-size: 100%;
   display: block;
   position: absolute;
@@ -826,8 +832,8 @@ body {
 }
 
 .favorited .favorite-icon .star-animation-1 {
-  -webkit-animation: starFloatMain-1 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: starFloatMain-1 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconFloatMain-1 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatMain-1 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .favorited .favorite-icon .star-animation-1::before,
@@ -839,19 +845,19 @@ body {
 
 .favorited .favorite-icon .star-animation-1::before {
   opacity: .6;
-  -webkit-animation: starFloatSub-1 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: starFloatSub-1 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconFloatSub-1 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatSub-1 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .favorited .favorite-icon .star-animation-1::after {
-  -webkit-animation: starFloatSub-2 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: starFloatSub-2 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconFloatSub-2 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatSub-2 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   opacity: .75;
 }
 
 .favorited .favorite-icon .star-animation-2 {
-  -webkit-animation: starFloatMain-2 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: starFloatMain-2 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconFloatMain-2 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatMain-2 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 .favorited .favorite-icon .star-animation-2::before,
@@ -862,231 +868,150 @@ body {
 }
 
 .favorited .favorite-icon .star-animation-2::before {
-  -webkit-animation: starFloatSub-3 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: starFloatSub-3 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconFloatSub-3 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatSub-3 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   opacity: .25;
 }
 
 .favorited .favorite-icon .star-animation-2::after {
-  -webkit-animation: starFloatSub-4 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-          animation: starFloatSub-4 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  -webkit-animation: iconFloatSub-4 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatSub-4 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   opacity: .4;
 }
 
-@-webkit-keyframes starPulse {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-
-  50% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
+.complete-button {
+  cursor: pointer;
+  border: 2px solid #c7c7c7;
+  border-radius: 40px;
+  padding: .45rem .75rem;
+  color: #878787;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1rem;
+  -webkit-transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: transparent;
 }
 
-@keyframes starPulse {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-
-  50% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
+.complete-button.completed {
+  color: #33cc33;
+  border-color: currentColor;
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 
-@-webkit-keyframes starUnlike {
-  50% {
-    -webkit-transform: scale(0.75);
-            transform: scale(0.75);
-  }
+.complete-button:hover {
+  border-color: currentColor;
 }
 
-@keyframes starUnlike {
-  50% {
-    -webkit-transform: scale(0.75);
-            transform: scale(0.75);
-  }
+.complete-button:focus {
+  outline: 0;
 }
 
-@-webkit-keyframes starFloatMain-1 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    opacity: 1;
-    -webkit-transform: translate(0, -25px) rotate(-20deg);
-            transform: translate(0, -25px) rotate(-20deg);
-  }
+.complete-icon {
+  width: 1.8rem;
+  height: 1.6rem;
+  display: inline-block;
+  position: relative;
+  margin-right: .25em;
+  font-size: 1.5rem;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 43'><path class='color' d='M 55.584673,43.175632 36.75281,22.967243 0,43.175632 40.42403,0 59.71135,20.208389 96,0 Z' fill='#33cc33' /></svg>") no-repeat center;
+  background-size: 100%;
+  -webkit-animation: effectIncomplete 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: effectIncomplete 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
-@keyframes starFloatMain-1 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    opacity: 1;
-    -webkit-transform: translate(0, -25px) rotate(-20deg);
-            transform: translate(0, -25px) rotate(-20deg);
-  }
+.completed .complete-icon {
+  -webkit-animation: iconPulse 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconPulse 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
-@-webkit-keyframes starFloatMain-2 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate(0) rotate(0) scale(0);
-            transform: translate(0) rotate(0) scale(0);
-  }
-
-  50% {
-    opacity: .9;
-    -webkit-transform: translate(-10px, -38px) rotate(25deg) scale(1);
-            transform: translate(-10px, -38px) rotate(25deg) scale(1);
-  }
+.completed .complete-icon [class^="complete-animation-"] {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 43'><path class='color' d='M 55.584673,43.175632 36.75281,22.967243 0,43.175632 40.42403,0 59.71135,20.208389 96,0 Z' fill='#33cc33' /></svg>") no-repeat center;
+  background-size: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 14px;
+  opacity: 0;
 }
 
-@keyframes starFloatMain-2 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate(0) rotate(0) scale(0);
-            transform: translate(0) rotate(0) scale(0);
-  }
-
-  50% {
-    opacity: .9;
-    -webkit-transform: translate(-10px, -38px) rotate(25deg) scale(1);
-            transform: translate(-10px, -38px) rotate(25deg) scale(1);
-  }
+.completed .complete-icon [class^="complete-animation-"]::before,
+.completed .complete-icon [class^="complete-animation-"]::after {
+  content: '';
+  background: inherit;
+  background-size: 100%;
+  width: inherit;
+  height: inherit;
+  display: inherit;
+  position: relative;
+  top: inherit;
+  left: inherit;
+  opacity: 0;
 }
 
-@-webkit-keyframes starFloatSub-1 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(13px, -13px) rotate(30deg);
-            transform: translate(13px, -13px) rotate(30deg);
-  }
+.completed .complete-icon .complete-animation-1 {
+  -webkit-animation: iconFloatMain-1 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatMain-1 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
-@keyframes starFloatSub-1 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(13px, -13px) rotate(30deg);
-            transform: translate(13px, -13px) rotate(30deg);
-  }
+.completed .complete-icon .complete-animation-1::before,
+.completed .complete-icon .complete-animation-1::after {
+  width: 12px;
+  height: 10px;
+  visibility: hidden;
 }
 
-@-webkit-keyframes starFloatSub-2 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(18px, -10px) rotate(55deg);
-            transform: translate(18px, -10px) rotate(55deg);
-  }
+.completed .complete-icon .complete-animation-1::before {
+  opacity: .6;
+  -webkit-animation: iconFloatSub-1 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatSub-1 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
-@keyframes starFloatSub-2 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(18px, -10px) rotate(55deg);
-            transform: translate(18px, -10px) rotate(55deg);
-  }
+.completed .complete-icon .complete-animation-1::after {
+  -webkit-animation: iconFloatSub-2 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatSub-2 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  opacity: .75;
 }
 
-@-webkit-keyframes starFloatSub-3 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(-10px, -10px) rotate(-40deg);
-            transform: translate(-10px, -10px) rotate(-40deg);
-  }
-
-  100% {
-    -webkit-transform: translate(-50px, 0);
-            transform: translate(-50px, 0);
-  }
+.completed .complete-icon .complete-animation-2 {
+  -webkit-animation: iconFloatMain-2 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatMain-2 1s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
-@keyframes starFloatSub-3 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(-10px, -10px) rotate(-40deg);
-            transform: translate(-10px, -10px) rotate(-40deg);
-  }
-
-  100% {
-    -webkit-transform: translate(-50px, 0);
-            transform: translate(-50px, 0);
-  }
+.completed .complete-icon .complete-animation-2::before,
+.completed .complete-icon .complete-animation-2::after {
+  width: 10px;
+  height: 8px;
+  visibility: hidden;
 }
 
-@-webkit-keyframes starFloatSub-4 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(2px, -18px) rotate(-25deg);
-            transform: translate(2px, -18px) rotate(-25deg);
-  }
+.completed .complete-icon .complete-animation-2::before {
+  -webkit-animation: iconFloatSub-3 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatSub-3 1s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  opacity: .25;
 }
 
-@keyframes starFloatSub-4 {
-  0% {
-    visibility: hidden;
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-
-  50% {
-    visibility: visible;
-    -webkit-transform: translate(2px, -18px) rotate(-25deg);
-            transform: translate(2px, -18px) rotate(-25deg);
-  }
+.completed .complete-icon .complete-animation-2::after {
+  -webkit-animation: iconFloatSub-4 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+          animation: iconFloatSub-4 1s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  opacity: .4;
 }
 
 .main-wrapper {
@@ -1118,10 +1043,10 @@ body {
 }
 
 .main-wrapper .content-wrapper .content {
-  height: 500px;
+  height: 300px;
 }
 
-.main-wrapper .content-wrapper .content-title {
+.main-wrapper .content-wrapper .options-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1131,24 +1056,126 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-item-align: stretch;
-      align-self: stretch;
-  margin-top: 2rem;
+  padding: 1rem 0 1rem 0;
 }
 
-.main-wrapper .content-wrapper .lesson-title {
-  font-size: 4rem;
+.main-wrapper .content-wrapper .options-row .tags {
+  margin-left: 1rem;
+}
+
+.main-wrapper .content-wrapper .options-row .tag {
+  font-size: 1.3rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: #0276FD;
+  margin-right: 1rem;
+}
+
+.main-wrapper .content-wrapper .options-row .tag:hover {
+  color: #0153b1;
+}
+
+.main-wrapper .content-wrapper .options-row .reaction-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 1rem;
+}
+
+.main-wrapper .content-wrapper .info-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-wrapper .content-wrapper .info-row .content-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60%;
+          flex: 0 0 60%;
+}
+
+.main-wrapper .content-wrapper .info-row .content-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  padding-top: 1rem;
+}
+
+.main-wrapper .content-wrapper .info-row .lesson-title {
+  font-size: 3rem;
   font-weight: 600;
   display: block;
 }
 
-.main-wrapper .content-wrapper .lesson-prof {
-  font-size: 3rem;
+.main-wrapper .content-wrapper .info-row .title-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0276FD;
+}
+
+.main-wrapper .content-wrapper .info-row .info-box {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.main-wrapper .content-wrapper .info-row .info-icon {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.8rem;
+}
+
+.main-wrapper .content-wrapper .info-row .lesson-info {
+  font-size: 1.3rem;
   display: block;
 }
 
-.main-wrapper .content-wrapper .lesson-description {
-  font-size: 2rem;
+.main-wrapper .content-wrapper .info-row .lesson-description {
+  font-size: 1.6rem;
+  text-align: justify;
 }
 
 /*!

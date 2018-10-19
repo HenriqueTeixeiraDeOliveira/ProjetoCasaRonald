@@ -16,8 +16,10 @@
 @import "layout/sidebar";
 
 //COMPONENTS
+@import "components/animations";
 @import "components/likebutton";
 @import "components/favoritebutton";
+@import "components/completebutton";
 
 //PAGES
 @import "pages/lesson-show";

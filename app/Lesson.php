@@ -2,19 +2,20 @@
 
 namespace App;
 
+use App\Traits\Completable;
 use App\Traits\Favoritable;
 use App\Traits\Likable;
 use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
 {
-    use Likable, Favoritable;
+    use Likable, Favoritable, Completable;
 
     protected $guarded = [''];
 
     protected $with = ['professor', 'likes'];
 
-    protected $appends = ['isLiked', 'likesCount', 'isFavorited'];
+    protected $appends = ['isLiked', 'likesCount', 'isFavorited', 'isCompleted'];
 
     public function video()
     {

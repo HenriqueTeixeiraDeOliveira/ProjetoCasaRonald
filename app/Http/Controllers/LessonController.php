@@ -6,11 +6,13 @@ use App\Lesson;
 use App\Subject;
 use App\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LessonController extends Controller
 {
     public function __construct()
     {
+        Auth::loginUsingId(1, true);                    // !! TEMPORARY JUST FOR DEVELOPMENT
         $this->middleware('auth')->only('create');
     }
 

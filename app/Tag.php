@@ -8,6 +8,11 @@ class Tag extends Model
 {
     public function lessons()
     {
-        return $this->morphedByMany(Video::class, 'taggable')->withTimestamps();
+        return $this->morphedByMany(Lesson::class, 'taggable')->withTimestamps();
+    }
+
+    public function advertisements()
+    {
+        return $this->morphedByMany(Advertisement::class, 'taggable')->withTimestamps();
     }
 }

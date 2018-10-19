@@ -1,8 +1,8 @@
 $gray: #c7c7c7;
-$pink: #ff6e6f;
+$green: #33cc33;
 $bezier: cubic-bezier(.175, .885, .32, 1.275);
 
-.like-button {
+.complete-button {
   cursor: pointer;
   border: 2px solid $gray;
   border-radius: 40px;
@@ -18,8 +18,8 @@ $bezier: cubic-bezier(.175, .885, .32, 1.275);
   user-select: none;
   background-color: transparent;
 
-  &.liked {
-    color: $pink;
+  &.completed {
+    color: $green;
     border-color: currentColor;
     filter: grayscale(0);
   }
@@ -33,24 +33,23 @@ $bezier: cubic-bezier(.175, .885, .32, 1.275);
   }
 }
 
-
-.like-icon {
+.complete-icon {
   width: 1.8rem;
   height: 1.6rem;
   display: inline-block;
   position: relative;
   margin-right: .25em;
   font-size: 1.5rem;
-  background: url('data:image/svg+xml;utf8,<svg width="21" height="18" viewBox="0 0 21 18" xmlns="http://www.w3.org/2000/svg"><title>heart-colored</title><path d="M10.101 4.417S8.895.207 5.111.207c-4.465 0-10.967 6.846 5.082 17.592C25.237 7.03 19.665.202 15.501.202c-4.162 0-5.4 4.215-5.4 4.215z" fill="#FF6E6F" fill-rule="evenodd"/></svg>') no-repeat center;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 43'><path class='color' d='M 55.584673,43.175632 36.75281,22.967243 0,43.175632 40.42403,0 59.71135,20.208389 96,0 Z' fill='#33cc33' /></svg>") no-repeat center;
   background-size: 100%;
-  animation: iconContract .25s $bezier both;
+  animation: effectIncomplete .25s $bezier both;
 }
 
-.liked .like-icon {
+.completed .complete-icon {
   animation: iconPulse .25s $bezier both;
 
-  [class^="heart-animation-"] {
-    background: url('data:image/svg+xml;utf8,<svg width="21" height="18" viewBox="0 0 21 18" xmlns="http://www.w3.org/2000/svg"><title>heart-colored</title><path d="M10.101 4.417S8.895.207 5.111.207c-4.465 0-10.967 6.846 5.082 17.592C25.237 7.03 19.665.202 15.501.202c-4.162 0-5.4 4.215-5.4 4.215z" fill="#FF6E6F" fill-rule="evenodd"/></svg>') no-repeat center;
+  [class^="complete-animation-"] {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 43'><path class='color' d='M 55.584673,43.175632 36.75281,22.967243 0,43.175632 40.42403,0 59.71135,20.208389 96,0 Z' fill='#33cc33' /></svg>") no-repeat center;
     background-size: 100%;
     display: block;
     position: absolute;
@@ -74,7 +73,7 @@ $bezier: cubic-bezier(.175, .885, .32, 1.275);
     }
   }
 
-  .heart-animation-1 {
+  .complete-animation-1 {
     animation: iconFloatMain-1 1s $bezier both;
 
     &::before, &::after {
@@ -92,7 +91,7 @@ $bezier: cubic-bezier(.175, .885, .32, 1.275);
     }
   }
 
-  .heart-animation-2 {
+  .complete-animation-2 {
     animation: iconFloatMain-2 1s .1s $bezier both;
 
     &::before, &::after {

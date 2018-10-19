@@ -50,6 +50,10 @@ Route::delete('lesson/{lesson}/likes', 'LikeController@destroy');
 Route::post('lesson/{lesson}/favorites', 'FavoriteController@store');
 Route::delete('lesson/{lesson}/favorites', 'FavoriteController@destroy');
 
+//------------------- COMPLETE CONTROLLER -------------------//
+Route::post('lesson/{lesson}/completes', 'CompleteController@store');
+Route::delete('lesson/{lesson}/completes', 'CompleteController@destroy');
+
 /*
 |   VERB            URI                     ACTION          ROUTE NAME
 |   GET             /example                index           example.index

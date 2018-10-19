@@ -17,6 +17,7 @@ window.Vue = require('vue');
 
 Vue.component('like-button', require('./components/LikeButton.vue'));
 Vue.component('favorite-button', require('./components/FavoriteButton.vue'));
+Vue.component('complete-button', require('./components/CompleteButton.vue'));
 
 const app = new Vue({
     el: '#app'

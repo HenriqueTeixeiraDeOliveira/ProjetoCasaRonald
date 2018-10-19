@@ -46,6 +46,10 @@ class LessonsTableSeeder extends Seeder
         $lesson1->favorite($user2);
         $lesson1->favorite($user3);
 
+        $lesson1->complete($user1);
+        $lesson1->complete($user2);
+        $lesson1->complete($user3);
+
         $lesson2 = factory(Lesson::class)->create([
             'subject_id' => 1,          //Análise Combinatória
             'professor_id' => 2,        //Matemática

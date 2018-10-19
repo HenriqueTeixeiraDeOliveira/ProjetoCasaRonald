@@ -74,4 +74,9 @@ class User extends Authenticatable
     {
         return $this->morphedByMany(Lesson::class, 'favoritable')->withTimestamps();
     }
+
+    public function completedLessons()
+    {
+        return $this->morphedByMany(Lesson::class, 'completable')->withTimestamps();
+    }
 }
