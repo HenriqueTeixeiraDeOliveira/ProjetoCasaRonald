@@ -12,11 +12,13 @@ class BooksTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Book::class)->create(['title' => 'Dois a Dois', 'type' => 'romance']);
-        factory(Book::class)->create(['title' => 'A culpa é das estrelas', 'type' => 'drama']);
-        factory(Book::class)->create(['title' => 'Garotos da Fuzarca', 'type' => 'comédia']);
-        factory(Book::class)->create(['title' => 'Diário de uma Paixão', 'type' => 'romance']);
-        factory(Book::class)->create(['title' => 'A menina que roubava livros', 'type' => 'drama']);
-        factory(Book::class)->create(['title' => 'O astronauta sem regime', 'type' => 'comédia']);
+        factory(Book::class)->create(['title' => 'Dois a Dois']);
+        factory(Book::class)->create(['title' => 'A culpa é das estrelas']);
+        factory(Book::class)->create(['title' => 'Garotos da Fuzarca']);
+        factory(Book::class)->create(['title' => 'Diário de uma Paixão']);
+        factory(Book::class)->create(['title' => 'A menina que roubava livros']);
+        factory(Book::class)->create(['title' => 'O astronauta sem regime']);
+        factory(Book::class)->create(['title' => 'O pequeno príncipe']);
+        factory(Book::class)->create(['title' => 'Poliana']);
     }
 }

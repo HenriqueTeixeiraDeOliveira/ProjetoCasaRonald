@@ -143,9 +143,24 @@ $factory->define(App\School::class, function (Faker $faker) {
 
 //------------------- BOOK -------------------//
 $factory->define(App\Book::class, function (Faker $faker) {
+    $genre = $faker->randomElement(['Infantil','Romance']);
+    if ($genre == 'Infantil') {
+        $library_id = "INF" . $faker->numberBetween(100,999);
+    } else {
+        $library_id = "ROM" . $faker->numberBetween(100,999);
+    }
+    $barcode = "7891234567" . $faker->numberBetween(100,999);
     return [
+        'library_id' => $library_id,
         'title' => $faker->word,
-        'type' => $faker->randomElement(['comédia','drama','romance'])
+        'genre' => $genre,
+        'pages' => $faker->numberBetween(50,500),
+        'author' => $faker->name,
+        'publisher' => $faker->randomElement(['Grupo Cultivar', 'Deriva']),
+        'barcode' => $barcode,
+        'year' => $faker->year(),
+        'x_position' => $faker->randomElement(['A','B','C','D','E','F','G','H']),
+        'y_position' => $faker->numberBetween(1,4)
     ];
 });
 

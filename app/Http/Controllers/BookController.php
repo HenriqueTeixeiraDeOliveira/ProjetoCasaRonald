@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Lesson;
-use App\Subject;
-use App\Video;
+use App\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;                    // !! TEMPORARY JUST FOR DEVELOPMENT
 
-class LessonController extends Controller
+class BookController extends Controller
 {
     public function __construct()
     {
         Auth::loginUsingId(1, true);                    // !! TEMPORARY JUST FOR DEVELOPMENT
-        $this->middleware('auth')->only('create');
+        $this->middleware('auth');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -23,9 +20,7 @@ class LessonController extends Controller
      */
     public function index()
     {
-        $lessons = Lesson::all();
-
-        return view('lesson.index')->with('lessons', $lessons);
+        //
     }
 
     /**
@@ -35,9 +30,7 @@ class LessonController extends Controller
      */
     public function create()
     {
-        $subjects = Subject::all();
-
-        return view('lesson.create')->with('subjects', $subjects);
+        //
     }
 
     /**
@@ -48,42 +41,27 @@ class LessonController extends Controller
      */
     public function store(Request $request)
     {
-        $lesson = Lesson::create([
-            'subject_id' => Subject::where('name',request('subject'))->firstOrFail()->id,
-            'title' => request('title'),
-            'level' => request('level')
-        ]);
-
-        Video::create([
-            'user_id' => auth()->id(),
-            'watchable_type' => 'lesson',
-            'watchable_id' => $lesson->id,
-            'title' => request('title'),
-            'description' => request('description'),
-            'url' => request('url')
-        ]);
-
-        return redirect()->route('home');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Lesson  $lesson
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Lesson $lesson)
+    public function show($id)
     {
-        return view('lesson.show')->with('lesson', $lesson);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Lesson  $lesson
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Lesson $lesson)
+    public function edit($id)
     {
         //
     }
@@ -92,10 +70,10 @@ class LessonController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Lesson  $lesson
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lesson $lesson)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -103,10 +81,10 @@ class LessonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Lesson  $lesson
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lesson $lesson)
+    public function destroy($id)
     {
         //
     }

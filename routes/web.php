@@ -19,14 +19,24 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//------------------- BOOK CONTROLLER -------------------//
+Route::get('/book', 'BookController@index');
+Route::get('/book/create', 'BookController@create');
+Route::post('/book', 'BookController@store');
+Route::get('/book/{book}', 'BookController@show');
+Route::get('/book/{book}/edit', 'BookController@edit');
+Route::patch('/book/{book}', 'BookController@update');
+Route::delete('/book/{book}', 'BookController@destroy');
+
+
 //------------------- LESSON CONTROLLER -------------------//
 Route::get('/lesson', 'LessonController@index');
 Route::get('/lesson/create', 'LessonController@create');
 Route::post('/lesson', 'LessonController@store');
 Route::get('/lesson/{lesson}', 'LessonController@show');
-//Route::get('/lesson/{lesson)/edit', 'LessonController@edit');
-//Route::patch('/lesson/{lesson)', 'LessonController@update');
-//Route::delete('/lesson/{lesson)', 'LessonController@destroy');
+//Route::get('/lesson/{lesson}/edit', 'LessonController@edit');
+//Route::patch('/lesson/{lesson}', 'LessonController@update');
+//Route::delete('/lesson/{lesson}', 'LessonController@destroy');
 
 
 //------------------- STICKER CONTROLLER -------------------//
@@ -34,9 +44,9 @@ Route::get('/sticker', 'StickerController@index');
 Route::get('/sticker/create', 'StickerController@create');
 Route::post('/sticker', 'StickerController@store');
 Route::get('/sticker/{sticker}', 'StickerController@show');
-//Route::get('/sticker/{sticker)/edit', 'StickerController@edit');
-//Route::patch('/sticker/{sticker)', 'StickerController@update');
-//Route::delete('/sticker/{sticker)', 'StickerController@destroy');
+//Route::get('/sticker/{sticker}/edit', 'StickerController@edit');
+//Route::patch('/sticker/{sticker}', 'StickerController@update');
+//Route::delete('/sticker/{sticker}', 'StickerController@destroy');
 
 //------------------- USER NOTIFICATION CONTROLLER -------------------//
 Route::get('/profile/notifications', 'UserNotificationController@index');
